@@ -3,9 +3,9 @@ from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
 from turtle import color
-color pallet= ["butter yellow, baby blue, baby pink" "mint green, lavender, silver" "orange, purple, black" "pink, blue, white" "pastel orange, pastel pink, pastel cyan"]
+color  = ["butter yellow, baby blue, baby pink" "mint green, lavender, silver" "orange, purple, black" "pink, blue, white" "pastel orange, pastel pink, pastel cyan" "dark blue, dark green, dark purple" "red, yellow, blue" "light pink, light blue, light green" "neon green, neon pink, neon yellow" "burgundy, navy blue, forest green" "peach, sky blue, lilac" "maroon, olive green, mustard yellow" "coral, turquoise, gold" "plum, teal, bronze" "salmon pink, mint green, lavender" "charcoal gray, blush pink, baby blue" "cobalt blue, emerald green, ruby red" "soft yellow, powder blue, pale pink" "steel gray, dusty rose, sage green" "bright orange, electric blue, hot pink" "cream, light gray, pastel purple" "maroon, orange, yellow" "light blue, pink, yellow" "orange, purple, green" "orange and green" "cyan and purple" "red and black" "pink and lavender" "green and lavander" "orange and indigo" "yellow and teal" "brown and green" "neon green and neon pink" "light orange and light blue" "brown and rainbow" "green and black"]   
 def generate_color_palette():
-    palette = random.choice(color_pallet)
+    palette = random.choice(color_palette) # type: ignore
     colors = palette.split(", ")
     return colors
 
@@ -13,17 +13,15 @@ from ast import List
 from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
-from turtle import song recemedation
 def generate_song_recommendation():
     songs = ["roses by iris copperman" "the hand by anabelle dinda" "dog prophecies by josie edwards" "orbiter by noah kahan" "the seed by aurora" "and the hound by yaelokre" "cryptid by cavetown" "preybirds by rabbitology" "DNA guarantee by kodi rhianne" "november by sparkbird" "campfire god song by willownbrook" "little boy in the grass by aurora" "anticipate heartbrake by aurora" "elizabeth by cult summer" "never the muse ny elio mei" "my alcoholic freinds by the dresden dolls" "be nice to me by the front bottoms" "mawce by everybodys worried about owen" "blitzkrieg bop by the ramones" "bog bodies by rabbitology" "placing the blame by self" "suffering by amelie farren" "kitchen light by josie edwards" "drift away omnicord by trillan"]    
     recommendation = random.choice(songs)
     return recommendation
 
-from ast import list 
+from ast import List 
 from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
-from turtle import daily affirmation
 def generate_daily_affirmation():
     affirmations = ["you are worthy of love and respect", "you are capable of achieving your goals", "you are strong and resilient", "you are deserving of happiness and success", "you are enough just as you are", "you have the power to create positive change in your life", "you are surrounded by love and support", "you are grateful for the abundance in your life", "you are confident in your abilities", "you are at peace with yourself and the world around you", "you are a unique and valuable person", "you are in control of your thoughts and emotions", "you are worthy of forgiveness and compassion", "you are capable of overcoming challenges and obstacles", "you are deserving of self-care and self-love", "you have the strength to let go of negativity and embrace positivity", "you are surrounded by beauty and inspiration", "you are grateful for the present moment and all that it brings", "you are confident in your own skin and embrace your individuality", "you are at peace with your past and excited for your future"]
     affirmation = random.choice(affirmations)
