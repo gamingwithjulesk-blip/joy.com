@@ -3,7 +3,7 @@ from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
 from turtle import color
-color  = ["butter yellow, baby blue, baby pink" "mint green, lavender, silver" "orange, purple, black" "pink, blue, white" "pastel orange, pastel pink, pastel cyan" "dark blue, dark green, dark purple" "red, yellow, blue" "light pink, light blue, light green" "neon green, neon pink, neon yellow" "burgundy, navy blue, forest green" "peach, sky blue, lilac" "maroon, olive green, mustard yellow" "coral, turquoise, gold" "plum, teal, bronze" "salmon pink, mint green, lavender" "charcoal gray, blush pink, baby blue" "cobalt blue, emerald green, ruby red" "soft yellow, powder blue, pale pink" "steel gray, dusty rose, sage green" "bright orange, electric blue, hot pink" "cream, light gray, pastel purple" "maroon, orange, yellow" "light blue, pink, yellow" "orange, purple, green" "orange and green" "cyan and purple" "red and black" "pink and lavender" "green and lavander" "orange and indigo" "yellow and teal" "brown and green" "neon green and neon pink" "light orange and light blue" "brown and rainbow" "green and black"]   
+color  = ("butter yellow, baby blue, baby pink", "mint green, lavender, silver", "orange, purple, black", "pink, blue, white", "pastel orange, pastel pink, pastel cyan", "dark blue, dark green, dark purple", "red, yellow, blue", "light pink, light blue, light green", "neon green, neon pink, neon yellow", "burgundy, navy blue, forest green", "peach, sky blue, lilac", "maroon, olive green, mustard yellow", "coral, turquoise, gold", "plum, teal, bronze", "salmon pink, mint green, lavender", "charcoal gray, blush pink, baby blue", "cobalt blue, emerald green, ruby red", "soft yellow, powder blue, pale pink", "steel gray, dusty rose, sage green", "bright orange, electric blue, hot pink", "cream, light gray, pastel purple", "maroon, orange, yellow", "light blue, pink, yellow", "orange, purple, green", "orange and green", "cyan and purple", "red and black", "pink and lavender", "green and lavander", "orange and indigo", "yellow and teal", "brown and green", "neon green and neon pink", "light orange and light blue", "brown and rainbow", "green and black" "orange, teal, and purple" , "pink, yellow, purple" , "green, purple,red" , "black and rainbow" , "black and pink" "black and yellow" , "green, white, pink" "pink, blue, green, yellow" , "rainbow", "yellow and green" "red, brown, blue" "pink, black, green" , "purple, red, yellow" , "green, red, yellow" , "orange, white, green" "red, black, yellow, white" , "yellow, pink, blue, purple" , "red, yellow, green, orange" , "black, yellow, red, blue" "brown and light blue" , "teal, maroon, white" "orange,blue,yellow", "green, brown, blue, pink" , "neon colors", "pastel colors", "muted colors", "green, ornage, blue", "yellow, red, blue" , )      
 def generate_color_palette():
     palette = random.choice(color_palette) # type: ignore
     colors = palette.split(", ")
@@ -13,16 +13,170 @@ from ast import List
 from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
+def generate_screen-free_activity():
+screen-free activity = ("go on a nature walk", "draw something", "read a book" , "go on a color scavenger hunt", "make a presentation about something you love", "bake something" , "try a new hobby" , "go to a local park" , "have a picnic" , "make a cardbourd craft" , "go geocaching" , "climb a tree" , "research a subject you know nothing about" , "decorate a picture frame", "find a pen pal" , "write a letter" , "paint something", "make something out of trash" , "listen to the radio", "write a song just for fun", "go to the libary and get a book on a topic thats new to you" , "make a calender" , "make a painting out of plants" , "press flowers" , "make a flower crown from real flowers" , "write a bucket list" , "make/learn a dance", "make a junk journal page out of recycling", "make a collage", "make your own watercolor paints" , "pick up litter in your negibour hood", "make braclets", "decorate your belongings", "make a sock puppet and a little play for them", "do a puzzle", "make duck tape art", "draw your dream outfit on paper", "make a scrunchie", "make custom trading cards", "design a board game", "draw your curent emotions" , "make a greek theater mask" , "draw you childhood stuffie" , "make a patch", "decorate clothing" , "decorate your phone case" ,"learn a new hairstyle", "make a headband" , "make a belt chain" , "make a keychain", "write afrimations for yourself", "make a vison board", "make up a card game" , "make jewlery" , "journal" , "decorate candles" , "make something from clay" , "do chalk art" , "play skiprope", "make a pillow/blanket fort" , "make slime" , "make a mini terarium", "draw yourself", "make yourself a sensory bin" , )
+
+
+from ast import List
+from numbers import Number
+import random
+from tkinter import messagebox, simpledialog
 def generate_song_recommendation():
-    songs = ["roses by iris copperman" "the hand by anabelle dinda" "dog prophecies by josie edwards" "orbiter by noah kahan" "the seed by aurora" "and the hound by yaelokre" "cryptid by cavetown" "preybirds by rabbitology" "DNA guarantee by kodi rhianne" "november by sparkbird" "campfire god song by willownbrook" "little boy in the grass by aurora" "anticipate heartbrake by aurora" "elizabeth by cult summer" "never the muse ny elio mei" "my alcoholic freinds by the dresden dolls" "be nice to me by the front bottoms" "mawce by everybodys worried about owen" "blitzkrieg bop by the ramones" "bog bodies by rabbitology" "placing the blame by self" "suffering by amelie farren" "kitchen light by josie edwards" "drift away omnicord by trillan"]    
-    recommendation = random.choice(songs)
-    return recommendation
+    songs = ("roses by iris copperman", "the hand by anabelle dinda", "dog prophecies by josie edwards", "orbiter by noah kahan", "the seed by aurora", "and the hound by yaelokre", "cryptid by cavetown", "preybirds by rabbitology", "DNA guarantee by kodi rhianne", "november by sparkbird", "campfire god song by willownbrook", "little boy in the grass by aurora", "anticipate heartbrake by aurora", "elizabeth by cult summer", "never the muse ny elio mei", "my alcoholic freinds by the dresden dolls", "be nice to me by the front bottoms", "mawce by everybodys worried about owen", "blitzkrieg bop by the ramones", "bog bodies by rabbitology", "placing the blame by self", "suffering by amelie farren", "kitchen light by josie edwards", "drift away omnicord by trillan", "the way you make me feel by michael jackson", "i want to hold your hand by the beatles", "doors by noah kahan", "poarch light by noah kahan", "the bird song by noah florce", "atlas by lilith max", "the cure by olivia rodrigo", "the lonliest girl in the world by noah florce", "hope ur ok by olivia rodrigo", "settle the score by cult summer" , "sweet tooth by cavetown" , "alien blues by vundabar" , "athenms for a seveten year old girl by yeule" , "august rain by willowbrook" , "smells like teen spirit by malia j " , "come as you are by niravana" , "star v by sofia isella" , "kitchen light by josie edwards" , "new house by josie edwards" , "high hopes by josie edward" , "lullaby by cavetown" , "dark by maddie ashman" , "house of wolves by my chemical romance", "she by green day" "american idiot by green day" ,"23 by noah kahan" ,"the great divide by noah kahan","at the cemetery by elio may and cloudkissed" , "watchers crown by cloudkissed", "devil town by cavetown", "juliet by cavetown" , "home by cavetown" , "500 miles by perter, paul, and mary" ,"the poet and her vice by josie eedwards" , "the moon will sing by the crane wives" , "good girls by josie edwards", "anarchy by egg", "turtle island by renee christine" , "cricket in the corner by lu la belle" , "stranger in you by ebril" , "sugar maple by ebril" ,"great escape by josie edwards", "running with scisors by cavetown")   
 
 from ast import List 
 from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
 def generate_daily_affirmation():
-    affirmations = ["you are worthy of love and respect", "you are capable of achieving your goals", "you are strong and resilient", "you are deserving of happiness and success", "you are enough just as you are", "you have the power to create positive change in your life", "you are surrounded by love and support", "you are grateful for the abundance in your life", "you are confident in your abilities", "you are at peace with yourself and the world around you", "you are a unique and valuable person", "you are in control of your thoughts and emotions", "you are worthy of forgiveness and compassion", "you are capable of overcoming challenges and obstacles", "you are deserving of self-care and self-love", "you have the strength to let go of negativity and embrace positivity", "you are surrounded by beauty and inspiration", "you are grateful for the present moment and all that it brings", "you are confident in your own skin and embrace your individuality", "you are at peace with your past and excited for your future"]
+    affirmations = ("you are worthy of love and respect", "you are capable of achieving your goals", "you are strong and resilient", "you are deserving of happiness and success", "you are enough just as you are", "you have the power to create positive change in your life", "you are surrounded by love and support", "you are grateful for the abundance in your life", "you are confident in your abilities",("you are at peace with yourself and the world around you"),("you are a unique and valuable person"),("you are in control of your thoughts and emotions"),("you are worthy of forgiveness and compassion"),("you are capable of overcoming challenges and obstacles"),("you are deserving of self-care and self-love"),("you have the strength to let go of negativity and embrace positivity"),("you are surrounded_by beauty_and inspiration"),("you are grateful for the present moment_and all that it brings"),("you are confident in your own skin_and embrace your individuality"),("you are at peace with your past_and excited for your future"),("you have nothing_to live for until you have something_to die for"),("the blessings you give to others will be given to more people than just the person you blessed" "your presence is a gift to the world", "you are a beacon of light and hope for those around you" "peoples words only have as much power as you give them" "joy is everywhere, you just have to look" ,"every end means another begining" "you are loved" "the more you struggle the stronger you become", "the light can always be turned back on" , "your eyes always ajust when your in the dark"))
     affirmation = random.choice(affirmations)
     return affirmation
+
+ <!DOCTYPE html> # type: ignore
+<html lang="en"> # type: ignore
+<head> # type: ignore
+  <meta charset="utf-8" /> # type: ignore
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> # type: ignore
+  <title>Art Gallery — Import Your Art</title> # type: ignore
+  <link rel="stylesheet" href="styles.css" /> # type: ignore
+</head> # type: ignore 
+<body># type: ignore 
+  <header># type: ignore 
+    <h1>Art Gallery</h1># type: ignore 
+    <p>Import your artwork — drag & drop or use the button.</p># type: ignore 
+  </header># type: ignore 
+ 
+
+  <main> # type: ignore 
+    <section class="controls"># type: ignore 
+      <label class="button" for="fileInput">Import Images</label># type: ignore 
+      <input id="fileInput" type="file" accept="image/*" multiple hidden /># type: ignore 
+      <div id="dropZone" class="drop-zone">Drop images here</div> # type: ignore 
+      <button id="clearBtn" class="small">Clear All</button> # type: ignore 
+    </section> # type: ignore 
+  <main> # type: ignore 
+    <section id="gallery" class="gallery"></section># type: ignore 
+
+ <section id="gallery" class="gallery" aria-live="polite"></section> # type: ignore
+  </main> # type: ignore
+
+
+<div id="viewer" class="viewer hidden" role="dialog" aria-modal="true"> # type: ignore
+<button id="viewerClose" class="viewer-close">✕</button> # type: ignore
+<img id="viewerImg" alt="" /> # type: ignore
+ <div id="viewerMeta" class="viewer-meta"></div>  # type: ignore
+  </div> # type: ignore 
+
+<script src="script.js"></script> # type: ignore 
+</body> # type: ignore 
+</html> # type: ignore 
+
+function downloadImageAsPdf(img) {
+  const element = document.createElement('div');
+  element.style.padding = '10px';
+  element.style.backgroundColor = '#fff';
+
+  const imgEl = document.createElement('img');
+  imgEl.src = img.data;
+  imgEl.style.maxWidth = '100%';
+  imgEl.style.height = 'auto';
+
+  element.appendChild(imgEl);
+
+    const opt = }
+    margin: 10,
+ filename: (img.name || 'artwork').replace(/\.[^/.]+$/, '') + '.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+     html2canvas: { scale: 2 },
+    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+
+      html2pdf().set(opt).from(element).save();
+
+async function downloadAllAsPdf(images) {
+  if(images.length === 0) 
+    alert('No images to download');
+    return;
+  }
+
+   const opt = {
+    margin: 10,
+    filename: 'art-gallery.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+  };
+
+    const container = document.createElement('div');
+  container.style.backgroundColor = '#fff';
+
+  for (let i = 0; i < images.length; i++) 
+    const img = images[i];
+    const pageDiv = document.createElement('div');
+    pageDiv.style.pageBreakAfter = 'always';
+    pageDiv.style.padding = '10px';
+     pageDiv.style.textAlign = 'center';
+
+  const titleEl = document.createElement('h2');
+    titleEl.textContent = img.name || 'Untitled';
+    titleEl.style.marginBottom = '10px';
+    pageDiv.appendChild(titleEl);
+
+       const imgEl = document.createElement('img');
+    imgEl.src = img.data;
+  imgEl.style.maxWidth = '90%';
+    imgEl.style.maxHeight = '80vh';
+
+      pageDiv.appendChild(imgEl);
+    container.appendChild(pageDiv);
+  {
+
+    html2pdf().set(opt).from(container).save();
+}
+
+const LIKES_KEY = 'artGallery.likes.v1';
+let likedImages = new Set();
+const viewerLikeBtn = document.getElementById('viewerLikeBtn');
+
+function saveLikes() {
+  try {
+    localStorage.setItem(LIKES_KEY, JSON.stringify(Array.from(likedImages)));
+      } catch (e) {
+    console.warn('Could not save liked image IDs', e);
+  }
+}
+
+function loadLikes() {
+  const raw = localStorage.getItem(LIKES_KEY);
+  if (!raw) return;
+  try {
+      likedImages = new Set(JSON.parse(raw));
+  } catch (e) {
+    likedImages = new Set();
+  }
+}
+
+function likeImage(id) {
+  const image = images.find(i => i.id === id);
+  if (!image || likedImages.has(id)) return;
+
+   image.likes = (image.likes || 0) + 1;
+  likedImages.add(id);
+    save();
+  saveLikes();
+  render();
+}
+function updateViewerLikeButton() {
+  if (!currentViewingImage) return;
+    if (likedImages.has(currentViewingImage.id)) {
+    viewerLikeBtn.textContent = 'Liked';
+    viewerLikeBtn.disabled = true;
+  } else {
+       viewerLikeBtn.textContent = '❤️ Like';
+    viewerLikeBtn.disabled = false;
+  }
+}
+
+viewerLikeBtn.addEventListener('click', () => {
+  if (currentViewingImage) likeImage(currentViewingImage.id);
+});
