@@ -10,7 +10,7 @@ def generate_color_palette():
     return colors
 
 from ast import List
-from numbers import Number
+from numbers import Number 
 import random
 from tkinter import messagebox, simpledialog
 def generate_screen-free_activity():
@@ -180,3 +180,295 @@ function updateViewerLikeButton() {
 viewerLikeBtn.addEventListener('click', () => {
   if (currentViewingImage) likeImage(currentViewingImage.id);
 });
+
+const COMMUNITY_POSTS_KEY = 'artGallery.community.posts.v1';
+const BOOKMARKS_KEY = 'artGallery.bookmarks.v1';
+
+let communityPosts = [];
+let bookmarkedPostIds = new Set();
+let currentViewingCommunityPost = null;
+
+function saveCommunityPosts() {
+  try {
+    localStorage.setItem(COMMUNITY_POSTS_KEY, JSON.stringify(communityPosts));
+  } catch (e) {
+       console.warn('Could not save community posts', e);
+  }
+}
+
+function loadCommunityPosts() {
+  const raw = localStorage.getItem(COMMUNITY_POSTS_KEY);
+  if (!raw) return;
+  try {
+       communityPosts = JSON.parse(raw);
+  } catch (e) {
+    communityPosts = [];
+  }
+}
+
+function saveBookmarks() {
+  try {
+    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(Array.from(bookmarkedPostIds)));
+  } catch (e) {
+       console.warn('Could not save bookmarks', e);
+  }
+}
+
+function loadBookmarks() {
+  const raw = localStorage.getItem(BOOKMARKS_KEY);
+  if (!raw) return;
+   try {
+    bookmarkedPostIds = new Set(JSON.parse(raw));
+  } catch (e) {
+      bookmarkedPostIds = new Set();
+  }
+}
+
+function shareToiCommunity(imageId) {
+  const image = images.find(i => i.id === imageId);
+  if (!image) return;
+
+    const post = {
+    id: 'post-' + Date.now().toString(36) + Math.random().toString(36).slice(2),
+    originalImageId: imageId,
+     name: image.name,
+    data: image.data,
+    likes: 0,
+    author: 'Anonymous',
+    createdAt: Date.now(),
+      sharedFrom: 'My Gallery'
+  };
+
+    communityPosts.unshift(post);
+  saveCommunityPosts();
+  renderCommunityGallery();
+
+    alert(`✅ "${image.name}" shared to community!`);
+}
+
+function bookmarkPost(postId) {
+  const post = communityPosts.find(p => p.id === postId);
+  if (!post || bookmarkedPostIds.has(postId)) return;
+
+   bookmarkedPostIds.add(postId);
+  saveBookmarks();
+    renderCommunityGallery();
+      renderBookmarksGallery();
+  updateViewerBookmarkButton();
+
+  alert('🔖 Post bookmarked!');
+}
+
+function removeBookmark(postId) {
+bookmarkedPostIds.delete(postId);
+saveBookmarks();
+renderCommunityGallery();
+renderBookmarksGallery();
+updateViewerBookmarkButton();
+}
+
+function renderCommunityGallery() {
+const communityGallery = document.getElementById('communityGallery');
+
+  if (communityPosts.length === 0) {
+    communityGallery.innerHTML = '<p style="color:var(--muted);text-align:center">No posts in community yet — share your artwork!</p>';
+    return;
+  }
+
+  communityGallery.innerHTML = '';
+  communityPosts.forEach(post => {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const imageEl = document.createElement('img');
+    imageEl.className = 'thumb';
+     imageEl.src = post.data;
+    imageEl.alt = post.name || 'Community Artwork';
+    imageEl.addEventListener('click', () => openCommunityViewer(post));
+
+    const meta = document.createElement('div');
+    meta.className = 'meta';
+
+ const name = document.createElement('div');
+ name.textContent = post.name || 'Untitled';
+
+ const actions = document.createElement('div');
+ actions.className = 'actions';
+
+ const likeCount = document.createElement('span');
+    likeCount.className = 'likes';
+    likeCount.textContent = `${post.likes || 0} ❤️`;
+
+        const bookmarkBtn = document.createElement('button');
+    bookmarkBtn.className = 'action-btn';
+     bookmarkBtn.title = bookmarkedPostIds.has(post.id) ? 'Remove bookmark' : 'Bookmark this post';
+    bookmarkBtn.textContent = bookmarkedPostIds.has(post.id) ? '🔖 Bookmarked' : '🔖 Bookmark';
+     bookmarkBtn.disabled = bookmarkedPostIds.has(post.id);
+    bookmarkBtn.addEventListener('click', (e) => {
+         e.stopPropagation();
+      if (bookmarkedPostIds.has(post.id)) {
+        removeBookmark(post.id);
+           } else {
+        bookmarkPost(post.id);
+      }
+    });
+
+        actions.appendChild(likeCount);
+    actions.appendChild(bookmarkBtn);
+
+     meta.appendChild(name);
+    meta.appendChild(actions);
+
+     card.appendChild(imageEl);
+    card.appendChild(meta);
+    communityGallery.appendChild(card);
+  });
+}
+
+function renderBookmarksGallery() {
+  const bookmarksGallery = document.getElementById('bookmarksGallery');
+
+   const bookmarkedPosts = communityPosts.filter(p => bookmarkedPostIds.has(p.id));
+
+    if (bookmarkedPosts.length === 0) {
+    bookmarksGallery.innerHTML = '<p style="color:var(--muted);text-align:center">No bookmarks yet — explore the community!</p>';
+    return;
+  }
+
+   bookmarksGallery.innerHTML = '';
+  bookmarkedPosts.forEach(post => {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+const imageEl = document.createElement('img');
+    imageEl.className = 'thumb';
+      imageEl.src = post.data;
+    imageEl.alt = post.name || 'Bookmarked Artwork';
+    imageEl.addEventListener('click', () => openCommunityViewer(post));
+
+const meta = document.createElement('div');
+    meta.className = 'meta';
+
+     const name = document.createElement('div');
+    name.textContent = post.name || 'Untitled';
+
+      const actions = document.createElement('div');
+    actions.className = 'actions';
+
+       const likeCount = document.createElement('span');
+    likeCount.className = 'likes';
+    likeCount.textContent = `${post.likes || 0} ❤️`;
+
+      const unbookmarkBtn = document.createElement('button');
+    unbookmarkBtn.className = 'action-btn remove';
+    unbookmarkBtn.textContent = '🗑️ Remove';
+    unbookmarkBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      removeBookmark(post.id);
+    });
+
+     actions.appendChild(likeCount);
+    actions.appendChild(unbookmarkBtn);
+
+    meta.appendChild(name);
+    meta.appendChild(actions);
+
+   card.appendChild(imageEl);
+    card.appendChild(meta);
+    bookmarksGallery.appendChild(card);
+  });
+}
+
+function openCommunityViewer(post) {
+  currentViewingCommunityPost = post;
+  currentViewingImage = null;
+
+ viewerImg.src = post.data;
+  viewerImg.alt = post.name || 'Artwork';
+  viewerMeta.textContent = `${post.name || 'Untitled'} · ${post.likes || 0} like${post.likes === 1 ? '' : 's'} · Shared: ${new Date(post.createdAt).toLocaleDateString()}`;
+  
+  viewer.classList.remove('hidden');
+  updateViewerShareButton();
+  updateViewerBookmarkButton();
+}
+
+function updateViewerShareButton() {
+  const viewerShareBtn = document.getElementById('viewerShareBtn');
+  const viewerBookmarkBtn = document.getElementById('viewerBookmarkBtn');
+
+    if (currentViewingImage) {
+    viewerShareBtn.style.display = 'inline-block';
+   viewerBookmarkBtn.style.display = 'none';
+  } else if (currentViewingCommunityPost) {
+      viewerShareBtn.style.display = 'none';
+    viewerBookmarkBtn.style.display = 'inline-block';
+  }
+}
+
+function updateViewerBookmarkButton() {
+  const viewerBookmarkBtn = document.getElementById('viewerBookmarkBtn');
+
+    if (!currentViewingCommunityPost) return;
+
+      if (bookmarkedPostIds.has(currentViewingCommunityPost.id)) {
+    viewerBookmarkBtn.textContent = '🔖 Bookmarked';
+    viewerBookmarkBtn.disabled = true;
+      } else {
+    viewerBookmarkBtn.textContent = '🔖 Bookmark';
+    viewerBookmarkBtn.disabled = false;
+  }
+}
+
+function switchTab(tabName) {
+  document.querySelectorAll('.tab-content').forEach(el => {
+    el.classList.add('hidden');
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  if (tabName === 'gallery') {
+    document.getElementById('gallery').classList.remove('hidden');
+    document.getElementById('galleryControls').style.display = 'flex';
+  } else if (tabName === 'community') {
+    document.getElementById('communityTab').classList.remove('hidden');
+    document.getElementById('galleryControls').style.display = 'none';
+    renderCommunityGallery();
+      } else if (tabName === 'bookmarks') {
+    document.getElementById('bookmarksTab').classList.remove('hidden');
+    document.getElementById('galleryControls').style.display = 'none';
+    renderBookmarksGallery();
+  }
+
+event.target.classList.add('active');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+ const viewerShareBtn = document.getElementById('viewerShareBtn');
+ const viewerBookmarkBtn = document.getElementById('viewerBookmarkBtn');
+
+   viewerShareBtn?.addEventListener('click', () => {
+    if (currentViewingImage) {
+      shareToiCommunity(currentViewingImage.id);
+    }
+  });
+
+    viewerBookmarkBtn?.addEventListener('click', () => {
+    if (currentViewingCommunityPost) {
+       if (!bookmarkedPostIds.has(currentViewingCommunityPost.id)) {
+        bookmarkPost(currentViewingCommunityPost.id);
+      }
+    }
+  });
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      switchTab(e.target.dataset.tab);
+    });
+  });
+});
+
+loadCommunityPosts();
+loadBookmarks();
+
