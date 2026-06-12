@@ -3,18 +3,18 @@ from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
 from turtle import color
-color  = ("butter yellow, baby blue, baby pink", "mint green, lavender, silver", "orange, purple, black", "pink, blue, white", "pastel orange, pastel pink, pastel cyan", "dark blue, dark green, dark purple", "red, yellow, blue", "light pink, light blue, light green", "neon green, neon pink, neon yellow", "burgundy, navy blue, forest green", "peach, sky blue, lilac", "maroon, olive green, mustard yellow", "coral, turquoise, gold", "plum, teal, bronze", "salmon pink, mint green, lavender", "charcoal gray, blush pink, baby blue", "cobalt blue, emerald green, ruby red", "soft yellow, powder blue, pale pink", "steel gray, dusty rose, sage green", "bright orange, electric blue, hot pink", "cream, light gray, pastel purple", "maroon, orange, yellow", "light blue, pink, yellow", "orange, purple, green", "orange and green", "cyan and purple", "red and black", "pink and lavender", "green and lavander", "orange and indigo", "yellow and teal", "brown and green", "neon green and neon pink", "light orange and light blue", "brown and rainbow", "green and black" "orange, teal, and purple" , "pink, yellow, purple" , "green, purple,red" , "black and rainbow" , "black and pink" "black and yellow" , "green, white, pink" "pink, blue, green, yellow" , "rainbow", "yellow and green" "red, brown, blue" "pink, black, green" , "purple, red, yellow" , "green, red, yellow" , "orange, white, green" "red, black, yellow, white" , "yellow, pink, blue, purple" , "red, yellow, green, orange" , "black, yellow, red, blue" "brown and light blue" , "teal, maroon, white" "orange,blue,yellow", "green, brown, blue, pink" , "neon colors", "pastel colors", "muted colors", "green, ornage, blue", "yellow, red, blue" , "forest green, red, white" , "coral, teal, white", "navy blue and gold" , "light blue and peach", "red, green, brown" , "purple and gold", "green, red, blue, brown" , "yellow, black, green" ,"light yellow, dark blue, pink" , "orange, blue, purple" , "red, orange, yellow, blue" , "mint green, purple, light pink", "gray, purple, brown" , ")      
+color  = ("butter yellow, baby blue, baby pink", "mint green, lavender, silver", "orange, purple, black", "pink, blue, white", "pastel orange, pastel pink, pastel cyan", "dark blue, dark green, dark purple", "red, yellow, blue", "light pink, light blue, light green", "neon green, neon pink, neon yellow", "burgundy, navy blue, forest green", "peach, sky blue, lilac", "maroon, olive green, mustard yellow", "coral, turquoise, gold", "plum, teal, bronze", "salmon pink, mint green, lavender", "charcoal gray, blush pink, baby blue", "cobalt blue, emerald green, ruby red", "soft yellow, powder blue, pale pink", "steel gray, dusty rose, sage green", "bright orange, electric blue, hot pink", "cream, light gray, pastel purple", "maroon, orange, yellow", "light blue, pink, yellow", "orange, purple, green", "orange and green", "cyan and purple", "red and black", "pink and lavender", "green and lavander", "orange and indigo", "yellow and teal", "brown and green", "neon green and neon pink", "light orange and light blue", "brown and rainbow", "green and black" "orange, teal, and purple" , "pink, yellow, purple" , "green, purple,red" , "black and rainbow" , "black and pink" "black and yellow" , "green, white, pink" "pink, blue, green, yellow" , "rainbow", "yellow and green" "red, brown, blue" "pink, black, green" , "purple, red, yellow" , "green, red, yellow" , "orange, white, green" "red, black, yellow, white" , "yellow, pink, blue, purple" , "red, yellow, green, orange" , "black, yellow, red, blue" "brown and light blue" , "teal, maroon, white" "orange,blue,yellow", "green, brown, blue, pink" , "neon colors", "pastel colors", "muted colors", "green, ornage, blue", "yellow, red, blue" , "forest green, red, white" , "coral, teal, white", "navy blue and gold" , "light blue and peach", "red, green, brown" , "purple and gold", "green, red, blue, brown" , "yellow, black, green" ,"light yellow, dark blue, pink" , "orange, blue, purple" , "red, orange, yellow, blue" , "mint green, purple, light pink", "gray, purple, brown" , "green, yellow, red, orange" , "purple, green, orange" , "orange, green, blue", "blue, pink, yellow", "white, yellow, blue", "maroon, light blue, white", "red, yellow, pink, white" , "orange,red,blue,green" , "orange, green, yellow" , "gold, light pink, white" , "brown, pink, blue" , "clean something" , "green, orange, purple" , "light blue, light green, white" , "teal, yellow, pink" , "gray, blue, white" , "dark blue, dark pink, light blue" , ")      
 def generate_color_palette():
     palette = random.choice(color_palette) # type: ignore
     colors = palette.split(", ")
-    return colors
+    return colors 
 
 from ast import List
 from numbers import Number 
 import random
 from tkinter import messagebox, simpledialog
 def generate_screen-free_activity():
-screen-free activity = ("go on a nature walk", "draw something", "read a book" , "go on a color scavenger hunt", "make a presentation about something you love", "bake something" , "try a new hobby" , "go to a local park" , "have a picnic" , "make a cardbourd craft" , "go geocaching" , "climb a tree" , "research a subject you know nothing about" , "decorate a picture frame", "find a pen pal" , "write a letter" , "paint something", "make something out of trash" , "listen to the radio", "write a song just for fun", "go to the libary and get a book on a topic thats new to you" , "make a calender" , "make a painting out of plants" , "press flowers" , "make a flower crown from real flowers" , "write a bucket list" , "make/learn a dance", "make a junk journal page out of recycling", "make a collage", "make your own watercolor paints" , "pick up litter in your negibour hood", "make braclets", "decorate your belongings", "make a sock puppet and a little play for them", "do a puzzle", "make duck tape art", "draw your dream outfit on paper", "make a scrunchie", "make custom trading cards", "design a board game", "draw your curent emotions" , "make a greek theater mask" , "draw you childhood stuffie" , "make a patch", "decorate clothing" , "decorate your phone case" ,"learn a new hairstyle", "make a headband" , "make a belt chain" , "make a keychain", "write afrimations for yourself", "make a vison board", "make up a card game" , "make jewlery" , "journal" , "decorate candles" , "make something from clay" , "do chalk art" , "play skiprope", "make a pillow/blanket fort" , "make slime" , "make a mini terarium", "draw yourself", "make yourself a sensory bin", "make a cardboard sculpture" ,"build a stick fort" , "make a garland" , "sew a plush" , "make a keychain" ,"play hopscotch", "blow bubbles")
+screen-free activity = ("go on a nature walk", "draw something", "read a book" , "go on a color scavenger hunt", "make a presentation about something you love", "bake something" , "try a new hobby" , "go to a local park" , "have a picnic" , "make a cardbourd craft" , "go geocaching" , "climb a tree" , "research a subject you know nothing about" , "decorate a picture frame", "find a pen pal" , "write a letter" , "paint something", "make something out of trash" , "listen to the radio", "write a song just for fun", "go to the libary and get a book on a topic thats new to you" , "make a calender" , "make a painting out of plants" , "press flowers" , "make a flower crown from real flowers" , "write a bucket list" , "make/learn a dance", "make a junk journal page out of recycling", "make a collage", "make your own watercolor paints" , "pick up litter in your negibour hood", "make braclets", "decorate your belongings", "make a sock puppet and a little play for them", "do a puzzle", "make duck tape art", "draw your dream outfit on paper", "make a scrunchie", "make custom trading cards", "design a board game", "draw your curent emotions" , "make a greek theater mask" , "draw you childhood stuffie" , "make a patch", "decorate clothing" , "decorate your phone case" ,"learn a new hairstyle", "make a headband" , "make a belt chain" , "make a keychain", "write afrimations for yourself", "make a vison board", "make up a card game" , "make jewlery" , "journal" , "decorate candles" , "make something from clay" , "do chalk art" , "play skiprope", "make a pillow/blanket fort" , "make slime" , "make a mini terarium", "draw yourself", "make yourself a sensory bin", "make a cardboard sculpture" ,"build a stick fort" , "make a garland" , "sew a plush" , "make a keychain" ,"play hopscotch", "blow bubbles" , "make a set list of your favourite songs on paper" , "start a journal about all of you favourite things" , "write a song about your favourite book" , "write an au of your favourite show/movie/book" , "listen to a genre of music you never have before" , "make art out of nature" , "go on a walk and try to find a cool rock")
 
 
 from ast import List
@@ -22,7 +22,7 @@ from numbers import Number
 import random
 from tkinter import messagebox, simpledialog
 def generate_song_recommendation():
-    songs = ("roses by iris copperman", "the hand by anabelle dinda", "dog prophecies by josie edwards", "orbiter by noah kahan", "the seed by aurora", "and the hound by yaelokre", "cryptid by cavetown", "preybirds by rabbitology", "DNA guarantee by kodi rhianne", "november by sparkbird", "campfire god song by willownbrook", "little boy in the grass by aurora", "anticipate heartbrake by aurora", "elizabeth by cult summer", "never the muse ny elio mei", "my alcoholic freinds by the dresden dolls", "be nice to me by the front bottoms", "mawce by everybodys worried about owen", "blitzkrieg bop by the ramones", "bog bodies by rabbitology", "placing the blame by self", "suffering by amelie farren", "kitchen light by josie edwards", "drift away omnicord by trillan", "the way you make me feel by michael jackson", "i want to hold your hand by the beatles", "doors by noah kahan", "poarch light by noah kahan", "the bird song by noah florce", "atlas by lilith max", "the cure by olivia rodrigo", "the lonliest girl in the world by noah florce", "hope ur ok by olivia rodrigo", "settle the score by cult summer" , "sweet tooth by cavetown" , "alien blues by vundabar" , "athenms for a seveten year old girl by yeule" , "august rain by willowbrook" , "smells like teen spirit by malia j " , "come as you are by niravana" , "star v by sofia isella" , "kitchen light by josie edwards" , "new house by josie edwards" , "high hopes by josie edward" , "lullaby by cavetown" , "dark by maddie ashman" , "house of wolves by my chemical romance", "she by green day" "american idiot by green day" ,"23 by noah kahan" ,"the great divide by noah kahan","at the cemetery by elio may and cloudkissed" , "watchers crown by cloudkissed", "devil town by cavetown", "juliet by cavetown" , "home by cavetown" , "500 miles by perter, paul, and mary" ,"the poet and her vice by josie eedwards" , "the moon will sing by the crane wives" , "good girls by josie edwards", "anarchy by egg", "turtle island by renee christine" , "cricket in the corner by lu la belle" , "stranger in you by ebril" , "sugar maple by ebril" ,"great escape by josie edwards", "running with scisors by cavetown")   
+    songs = ("roses by iris copperman", "the hand by anabelle dinda", "dog prophecies by josie edwards", "orbiter by noah kahan", "the seed by aurora", "and the hound by yaelokre", "cryptid by cavetown", "preybirds by rabbitology", "DNA guarantee by kodi rhianne", "november by sparkbird", "campfire god song by willownbrook", "little boy in the grass by aurora", "anticipate heartbrake by aurora", "elizabeth by cult summer", "never the muse ny elio mei", "my alcoholic freinds by the dresden dolls", "be nice to me by the front bottoms", "mawce by everybodys worried about owen", "blitzkrieg bop by the ramones", "bog bodies by rabbitology", "placing the blame by self", "suffering by amelie farren", "kitchen light by josie edwards", "drift away omnicord by trillan", "the way you make me feel by michael jackson", "i want to hold your hand by the beatles", "doors by noah kahan", "poarch light by noah kahan", "the bird song by noah florce", "atlas by lilith max", "the cure by olivia rodrigo", "the lonliest girl in the world by noah florce", "hope ur ok by olivia rodrigo", "settle the score by cult summer" , "sweet tooth by cavetown" , "alien blues by vundabar" , "athenms for a seveten year old girl by yeule" , "august rain by willowbrook" , "smells like teen spirit by malia j " , "come as you are by niravana" , "star v by sofia isella" , "kitchen light by josie edwards" , "new house by josie edwards" , "high hopes by josie edward" , "lullaby by cavetown" , "dark by maddie ashman" , "house of wolves by my chemical romance", "she by green day" "american idiot by green day" ,"23 by noah kahan" ,"the great divide by noah kahan","at the cemetery by elio may and cloudkissed" , "watchers crown by cloudkissed", "devil town by cavetown", "juliet by cavetown" , "home by cavetown" , "500 miles by perter, paul, and mary" ,"the poet and her vice by josie eedwards" , "the moon will sing by the crane wives" , "good girls by josie edwards", "anarchy by egg", "turtle island by renee christine" , "cricket in the corner by lu la belle" , "stranger in you by ebril" , "sugar maple by ebril" ,"great escape by josie edwards", "running with scisors by cavetown", "white blank page by mumford and sons" , "animal by sir chloe" , "lavender by penelope scott", "girls by girl in red")   
 
 from ast import List 
 from numbers import Number
@@ -84,7 +84,7 @@ function downloadImageAsPdf(img) {
 
   element.appendChild(imgEl);
 
-    const opt = }
+    const opt = } 
     margin: 10,
  filename: (img.name || 'artwork').replace(/\.[^/.]+$/, '') + '.pdf',
     image: { type: 'jpeg', quality: 0.98 },
@@ -95,9 +95,9 @@ function downloadImageAsPdf(img) {
 
 async function downloadAllAsPdf(images) {
   if(images.length === 0) 
-    alert('No images to download');
+    alert('No images to download')
     return;
-  }
+ }
 
    const opt = {
     margin: 10,
@@ -168,7 +168,7 @@ function likeImage(id) {
 }
 function updateViewerLikeButton() {
   if (!currentViewingImage) return;
-    if (likedImages.has(currentViewingImage.id)) {
+    if (likedImages.has(currentViewingImage.id)){
     viewerLikeBtn.textContent = 'Liked';
     viewerLikeBtn.disabled = true;
   } else {
@@ -453,7 +453,6 @@ document.addEventListener('DOMContentLoaded', () => {
       shareToiCommunity(currentViewingImage.id);
     }
   });
-
     viewerBookmarkBtn?.addEventListener('click', () => {
     if (currentViewingCommunityPost) {
        if (!bookmarkedPostIds.has(currentViewingCommunityPost.id)) {
@@ -461,15 +460,218 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
     document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       switchTab(e.target.dataset.tab);
     });
   });
 });
-
 loadCommunityPosts();
 loadBookmarks();
+
+const fileInput = document.getElementById('fileInput');
+const dropZone = document.getElementById('dropZone');
+const galleryEl = document.getElementById('gallery');
+const clearBtn = document.getElementById('clearBtn');
+const downloadAllBtn = document.getElementById('downloadAllBtn');
+
+const viewer = document.getElementById('viewer');
+const viewerImg = document.getElementById('viewerImg');
+const viewerVideo = document.getElementById('viewerVideo');
+const viewerClose = document.getElementById('viewerClose');
+const viewerMeta = document.getElementById('viewerMeta');
+const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+
+const STORAGE_KEY = 'artGallery.images.v1';
+
+let images = [];
+let currentViewingImage = null;
+
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(images));
+  } catch (e) {
+    console.warn('Could not save media', e);
+  }
+}
+
+function load() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+    try {
+    images = JSON.parse(raw).map(img => ({
+      ...img,
+       likes: img.likes || 0,
+      type: img.type || (img.data && img.data.startsWith('data:video') ? 'video' : 'image')
+        }));
+  } catch (e) {
+    images = [];
+  }
+}
+
+function render() {
+  galleryEl.innerHTML = '';
+  if (images.length === 0) {
+    galleryEl.innerHTML = '<p style="color:var(--muted);text-align:center">No media yet — import some art!</p>';
+    return;
+  }
+
+    images.slice().reverse().forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+        const mediaEl = item.type === 'video' ? document.createElement('video') : document.createElement('img');
+    mediaEl.className = 'thumb';
+    mediaEl.src = item.data;
+
+      if (item.type === 'video') {
+      mediaEl.muted = true;
+       mediaEl.loop = true;
+      mediaEl.preload = 'metadata';
+         } else {
+      mediaEl.alt = item.name || 'Artwork';
+    }
+
+     mediaEl.addEventListener('click', () => openViewer(item));
+
+    const meta = document.createElement('div');
+    meta.className = 'meta';'
+
+    const name = document.createElement('div');
+    name.textContent = item.name || 'Untitled';
+
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+
+  const likeCount = document.createElement('span');
+    likeCount.className = 'likes';
+     likeCount.textContent = `${item.likes || 0} ❤️`;
+
+    const likeBtn = document.createElement('button');
+     likeBtn.className = 'like';
+       likeBtn.textContent = likedImages.has(item.id) ? 'Liked' : 'Like';
+    likeBtn.disabled = likedImages.has(item.id);
+      likeBtn.addEventListener('click', () => likeImage(item.id));
+
+      const removeBtn = document.createElement('button');
+    removeBtn.className = 'remove';
+ removeBtn.textContent = 'Remove';
+    removeBtn.addEventListener('click', () => removeImage(item.id));
+
+        actions.appendChild(likeCount);
+    actions.appendChild(likeBtn);
+    actions.appendChild(removeBtn);
+
+    meta.appendChild(name);
+    meta.appendChild(actions);
+
+  card.appendChild(mediaEl);
+    card.appendChild(meta);
+    galleryEl.appendChild(card);
+  });
+
+ updateViewerLikeButton();
+}
+
+function addFiles(fileList) {
+  const files = Array.from(fileList).filter(f => f.type && (f.type.startsWith('image') || f.type.startsWith('video')));
+  if (files.length === 0) return;
+
+    const readers = files.map(f => new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = e => resolve({
+   name: f.name,
+  data: e.target.result,
+   id: Date.now().toString(36) + Math.random().toString(36).slice(2),
+      created: Date.now(),
+      likes: 0,  
+ type: f.type.startsWith('video') ? 'video' : 'image'
+    });
+    reader.readAsDataURL(f);
+  }));
+
+  Promise.all(readers).then(results => {
+    images = images.concat(results);
+    save();
+      render();
+  }).catch(err => console.error(err));
+}
+
+function displayViewerItem(item, source = 'gallery') {
+    currentViewingImage = source === 'gallery' ? item : null;
+    currentViewingCommunityPost = source === 'community' ? item : null;
+
+  viewerImg.classList.add('hidden');
+  viewerVideo.classList.add('hidden');
+  viewerVideo.pause();
+    viewerVideo.removeAttribute('src');
+  viewerVideo.load();
+
+  
+const viewerVideo: HTMLElement | null
+ viewerVideo.classList.remove('hidden');
+    viewerVideo.play().catch(() => {});
+  } else {
+      viewerImg.src = item.data;
+    viewerImg.alt = item.name || 'Artwork';
+    viewerImg.classList.remove('hidden');
+  }
+
+    viewerMeta.textContent = `${item.name || 'Untitled'} · ${item.likes || 0} like${item.likes === 1 ? '' : 's'} · ${item.type === 'video' ? 'Video' : 'Photo'}`;
+  viewer.classList.remove('hidden');
+  updateViewerLikeButton();
+  updateViewerShareButton();
+
+
+function openViewer(img) {
+  displayViewerItem(img, 'gallery');
+}
+
+function closeViewer() {
+  viewer.classList.add('hidden');
+  viewerImg.src = '';
+    viewerVideo.pause();
+  viewerVideo.removeAttribute('src');
+    viewerVideo.load();
+  currentViewingImage = null;
+   currentViewingCommunityPost = null;
+}
+
+fileInput.addEventListener('change', e => addFiles(e.target.files));
+
+['dragenter', 'dragover'].forEach(ev => dropZone.addEventListener(ev, e => { e.preventDefault(); dropZone.classList.add('drag'); }));
+['dragleave', 'drop'].forEach(ev => dropZone.addEventListener(ev, e => { e.preventDefault(); dropZone.classList.remove('drag'); }));
+
+dropZone.addEventListener('drop', e => {
+  if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
+});
+
+clearBtn.addEventListener('click', () => {
+  if (!confirm('Clear all saved media?')) return;
+  images = [];
+likedImages.clear();
+  save();
+  saveLikes();
+  render();
+});
+
+downloadPdfBtn.addEventListener('click', () => {
+  const activeItem = currentViewingImage || currentViewingCommunityPost;
+   if (activeItem?.type === 'image') {
+    downloadImageAsPdf(activeItem);
+     } else {
+    alert('PDF export is available for photos only.');
+  }
+});
+
+downloadAllBtn.addEventListener('click', () => downloadAllAsPdf(images.filter(item => item.type === 'image')));
+
+viewerClose.addEventListener('click', closeViewer);
+viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
+
+load();
+loadLikes();
+render();
+
 
 
