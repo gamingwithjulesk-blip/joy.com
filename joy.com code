@@ -1,677 +1,1212 @@
-from ast import List
-from numbers import Number
-import random
-from tkinter import messagebox, simpledialog
-from turtle import color
-color  = ("butter yellow, baby blue, baby pink", "mint green, lavender, silver", "orange, purple, black", "pink, blue, white", "pastel orange, pastel pink, pastel cyan", "dark blue, dark green, dark purple", "red, yellow, blue", "light pink, light blue, light green", "neon green, neon pink, neon yellow", "burgundy, navy blue, forest green", "peach, sky blue, lilac", "maroon, olive green, mustard yellow", "coral, turquoise, gold", "plum, teal, bronze", "salmon pink, mint green, lavender", "charcoal gray, blush pink, baby blue", "cobalt blue, emerald green, ruby red", "soft yellow, powder blue, pale pink", "steel gray, dusty rose, sage green", "bright orange, electric blue, hot pink", "cream, light gray, pastel purple", "maroon, orange, yellow", "light blue, pink, yellow", "orange, purple, green", "orange and green", "cyan and purple", "red and black", "pink and lavender", "green and lavander", "orange and indigo", "yellow and teal", "brown and green", "neon green and neon pink", "light orange and light blue", "brown and rainbow", "green and black" "orange, teal, and purple" , "pink, yellow, purple" , "green, purple,red" , "black and rainbow" , "black and pink" "black and yellow" , "green, white, pink" "pink, blue, green, yellow" , "rainbow", "yellow and green" "red, brown, blue" "pink, black, green" , "purple, red, yellow" , "green, red, yellow" , "orange, white, green" "red, black, yellow, white" , "yellow, pink, blue, purple" , "red, yellow, green, orange" , "black, yellow, red, blue" "brown and light blue" , "teal, maroon, white" "orange,blue,yellow", "green, brown, blue, pink" , "neon colors", "pastel colors", "muted colors", "green, ornage, blue", "yellow, red, blue" , "forest green, red, white" , "coral, teal, white", "navy blue and gold" , "light blue and peach", "red, green, brown" , "purple and gold", "green, red, blue, brown" , "yellow, black, green" ,"light yellow, dark blue, pink" , "orange, blue, purple" , "red, orange, yellow, blue" , "mint green, purple, light pink", "gray, purple, brown" , "green, yellow, red, orange" , "purple, green, orange" , "orange, green, blue", "blue, pink, yellow", "white, yellow, blue", "maroon, light blue, white", "red, yellow, pink, white" , "orange,red,blue,green" , "orange, green, yellow" , "gold, light pink, white" , "brown, pink, blue" , "clean something" , "green, orange, purple" , "light blue, light green, white" , "teal, yellow, pink" , "gray, blue, white" , "dark blue, dark pink, light blue" , ")      
-def generate_color_palette():
-    palette = random.choice(color_palette) # type: ignore
-    colors = palette.split(", ")
-    return colors 
+import { useState, useRef, useEffect } from "react";
+import { RefreshCw, Music, Palette, Upload, X, ChevronDown, Shuffle, ImageIcon, Leaf, Heart, Bookmark, Wind } from "lucide-react";
 
-from ast import List
-from numbers import Number 
-import random
-from tkinter import messagebox, simpledialog
-def generate_screen-free_activity():
-screen-free activity = ("go on a nature walk", "draw something", "read a book" , "go on a color scavenger hunt", "make a presentation about something you love", "bake something" , "try a new hobby" , "go to a local park" , "have a picnic" , "make a cardbourd craft" , "go geocaching" , "climb a tree" , "research a subject you know nothing about" , "decorate a picture frame", "find a pen pal" , "write a letter" , "paint something", "make something out of trash" , "listen to the radio", "write a song just for fun", "go to the libary and get a book on a topic thats new to you" , "make a calender" , "make a painting out of plants" , "press flowers" , "make a flower crown from real flowers" , "write a bucket list" , "make/learn a dance", "make a junk journal page out of recycling", "make a collage", "make your own watercolor paints" , "pick up litter in your negibour hood", "make braclets", "decorate your belongings", "make a sock puppet and a little play for them", "do a puzzle", "make duck tape art", "draw your dream outfit on paper", "make a scrunchie", "make custom trading cards", "design a board game", "draw your curent emotions" , "make a greek theater mask" , "draw you childhood stuffie" , "make a patch", "decorate clothing" , "decorate your phone case" ,"learn a new hairstyle", "make a headband" , "make a belt chain" , "make a keychain", "write afrimations for yourself", "make a vison board", "make up a card game" , "make jewlery" , "journal" , "decorate candles" , "make something from clay" , "do chalk art" , "play skiprope", "make a pillow/blanket fort" , "make slime" , "make a mini terarium", "draw yourself", "make yourself a sensory bin", "make a cardboard sculpture" ,"build a stick fort" , "make a garland" , "sew a plush" , "make a keychain" ,"play hopscotch", "blow bubbles" , "make a set list of your favourite songs on paper" , "start a journal about all of you favourite things" , "write a song about your favourite book" , "write an au of your favourite show/movie/book" , "listen to a genre of music you never have before" , "make art out of nature" , "go on a walk and try to find a cool rock")
+// ─── Breathwork & Grounding ─────────────────────────────────────────────────────
 
+const BOX_PHASES = [
+  { label: "Inhale",  instruction: "breathe in slowly",  duration: 4, big: true  },
+  { label: "Hold",    instruction: "hold your breath",   duration: 4, big: true  },
+  { label: "Exhale",  instruction: "breathe out slowly", duration: 4, big: false },
+  { label: "Hold",    instruction: "hold and rest",      duration: 4, big: false },
+];
 
-from ast import List
-from numbers import Number 
-import random
-from tkinter import messagebox, simpledialog
-def generate_song_recommendation():
-    songs = ("roses by iris copperman", "the hand by anabelle dinda", "dog prophecies by josie edwards", "orbiter by noah kahan", "the seed by aurora", "and the hound by yaelokre", "cryptid by cavetown", "preybirds by rabbitology", "DNA guarantee by kodi rhianne", "november by sparkbird", "campfire god song by willownbrook", "little boy in the grass by aurora", "anticipate heartbrake by aurora", "elizabeth by cult summer", "never the muse ny elio mei", "my alcoholic freinds by the dresden dolls", "be nice to me by the front bottoms", "mawce by everybodys worried about owen", "blitzkrieg bop by the ramones", "bog bodies by rabbitology", "placing the blame by self", "suffering by amelie farren", "kitchen light by josie edwards", "drift away omnicord by trillan", "the way you make me feel by michael jackson", "i want to hold your hand by the beatles", "doors by noah kahan", "poarch light by noah kahan", "the bird song by noah florce", "atlas by lilith max", "the cure by olivia rodrigo", "the lonliest girl in the world by noah florce", "hope ur ok by olivia rodrigo", "settle the score by cult summer" , "sweet tooth by cavetown" , "alien blues by vundabar" , "athenms for a seveten year old girl by yeule" , "august rain by willowbrook" , "smells like teen spirit by malia j " , "come as you are by niravana" , "star v by sofia isella" , "kitchen light by josie edwards" , "new house by josie edwards" , "high hopes by josie edward" , "lullaby by cavetown" , "dark by maddie ashman" , "house of wolves by my chemical romance", "she by green day" "american idiot by green day" ,"23 by noah kahan" ,"the great divide by noah kahan","at the cemetery by elio may and cloudkissed" , "watchers crown by cloudkissed", "devil town by cavetown", "juliet by cavetown" , "home by cavetown" , "500 miles by perter, paul, and mary" ,"the poet and her vice by josie eedwards" , "the moon will sing by the crane wives" , "good girls by josie edwards", "anarchy by egg", "turtle island by renee christine" , "cricket in the corner by lu la belle" , "stranger in you by ebril" , "sugar maple by ebril" ,"great escape by josie edwards", "running with scisors by cavetown", "white blank page by mumford and sons" , "animal by sir chloe" , "lavender by penelope scott", "girls by girl in red")   
+const GROUNDING_STEPS = [
+  { count: 5, sense: "See",   color: "#baaed0", prompt: "Look around and name 5 things you can see right now." },
+  { count: 4, sense: "Feel",  color: "#a8cbb8", prompt: "Notice 4 things you can physically touch or feel on your body." },
+  { count: 3, sense: "Hear",  color: "#b8cce8", prompt: "Listen carefully for 3 sounds in your environment." },
+  { count: 2, sense: "Smell", color: "#f5c88a", prompt: "Find 2 things you can smell, or think of 2 scents you love." },
+  { count: 1, sense: "Taste", color: "#f2b8c0", prompt: "Notice 1 thing you can taste, or take a slow sip of water." },
+];
 
-from ast import List 
-from numbers import Number
-import random
-from tkinter import messagebox, simpledialog
-def generate_daily_affirmation():
-    affirmations = ("you are worthy of love and respect", "you are capable of achieving your goals", "you are strong and resilient", "you are deserving of happiness and success", "you are enough just as you are", "you have the power to create positive change in your life", "you are surrounded by love and support", "you are grateful for the abundance in your life", "you are confident in your abilities",("you are at peace with yourself and the world around you"),("you are a unique and valuable person"),("you are in control of your thoughts and emotions"),("you are worthy of forgiveness and compassion"),("you are capable of overcoming challenges and obstacles"),("you are deserving of self-care and self-love"),("you have the strength to let go of negativity and embrace positivity"),("you are surrounded_by beauty_and inspiration"),("you are grateful for the present moment_and all that it brings"),("you are confident in your own skin_and embrace your individuality"),("you are at peace with your past_and excited for your future"),("you have nothing_to live for until you have something_to die for"),("the blessings you give to others will be given to more people than just the person you blessed" "your presence is a gift to the world", "you are a beacon of light and hope for those around you" "peoples words only have as much power as you give them" "joy is everywhere, you just have to look" ,"every end means another begining" "you are loved" "the more you struggle the stronger you become", "the light can always be turned back on" , "your eyes always ajust when your in the dark"))
-    affirmation = random.choice(affirmations)
-    return affirmation
+// ─── Affirmations ──────────────────────────────────────────────────────────────
 
- <!DOCTYPE html> # type: ignore
-<html lang="en"> # type: ignore
-<head> # type: ignore
-  <meta charset="utf-8" /> # type: ignore
-  <meta name="viewport" content="width=device-width,initial-scale=1" /> # type: ignore
-  <title>Art Gallery — Import Your Art</title> # type: ignore
-  <link rel="stylesheet" href="styles.css" /> # type: ignore
-</head> # type: ignore 
-<body># type: ignore 
-  <header># type: ignore 
-    <h1>Art Gallery</h1># type: ignore 
-    <p>Import your artwork — drag & drop or use the button.</p># type: ignore 
-  </header># type: ignore 
- 
+const AFFIRMATIONS = [
+  "You are drawn to the light, and the light is drawn to you.",
+  "Your softness is a kind of strength the daylight does not understand.",
+  "Every metamorphosis begins in the dark.",
+  "You navigate by instinct, and your instinct is true.",
+  "The night holds space for everything you are.",
+  "Your wings know the way even when your eyes do not.",
+  "Stillness is not the absence of movement — it is power in repose.",
+  "You were made for the in-between hours, and they were made for you.",
+  "Dust and moonlight are enough to carry you home.",
+  "You find the brightest thing in any room and fly toward it bravely.",
+  "Your patterns are intricate and intentional, even when you cannot see them.",
+  "Rest is not retreat. Rest is how you prepare to astonish.",
+  "There is ancient knowledge in your antennae.",
+  "You are part of the quiet ecosystem of beautiful things.",
+  "The light you seek is also seeking you.",
+  "You belong to the hours before sunrise and after midnight.",
+  "Your wings carry more than you know.",
+];
 
-  <main> # type: ignore 
-    <section class="controls"># type: ignore 
-      <label class="button" for="fileInput">Import Images</label># type: ignore 
-      <input id="fileInput" type="file" accept="image/*" multiple hidden /># type: ignore 
-      <div id="dropZone" class="drop-zone">Drop images here</div> # type: ignore 
-      <button id="clearBtn" class="small">Clear All</button> # type: ignore 
-    </section> # type: ignore 
-  <main> # type: ignore 
-    <section id="gallery" class="gallery"></section># type: ignore 
+// ─── Screen-Free Activities ────────────────────────────────────────────────────
 
- <section id="gallery" class="gallery" aria-live="polite"></section> # type: ignore
-  </main> # type: ignore
+type ActivityCategory = "outdoors" | "art & craft" | "writing & music" | "make & build" | "just for fun";
 
+interface Activity { text: string; category: ActivityCategory; }
 
-<div id="viewer" class="viewer hidden" role="dialog" aria-modal="true"> # type: ignore
-<button id="viewerClose" class="viewer-close">✕</button> # type: ignore
-<img id="viewerImg" alt="" /> # type: ignore
- <div id="viewerMeta" class="viewer-meta"></div>  # type: ignore
-  </div> # type: ignore 
+const ACTIVITIES: Activity[] = [
+  { text: "Go on a nature walk", category: "outdoors" },
+  { text: "Go on a color scavenger hunt", category: "outdoors" },
+  { text: "Go to a local park", category: "outdoors" },
+  { text: "Have a picnic", category: "outdoors" },
+  { text: "Go geocaching", category: "outdoors" },
+  { text: "Climb a tree", category: "outdoors" },
+  { text: "Pick up litter in your neighbourhood", category: "outdoors" },
+  { text: "Do chalk art", category: "outdoors" },
+  { text: "Play skip rope", category: "outdoors" },
+  { text: "Play hopscotch", category: "outdoors" },
+  { text: "Blow bubbles", category: "outdoors" },
+  { text: "Build a stick fort", category: "outdoors" },
+  { text: "Go on a walk and try to find a cool rock", category: "outdoors" },
+  { text: "Make art out of nature", category: "outdoors" },
 
-<script src="script.js"></script> # type: ignore 
-</body> # type: ignore 
-</html> # type: ignore 
+  { text: "Draw something", category: "art & craft" },
+  { text: "Paint something", category: "art & craft" },
+  { text: "Make a painting out of plants", category: "art & craft" },
+  { text: "Press flowers", category: "art & craft" },
+  { text: "Make a flower crown from real flowers", category: "art & craft" },
+  { text: "Make a collage", category: "art & craft" },
+  { text: "Make your own watercolor paints", category: "art & craft" },
+  { text: "Decorate a picture frame", category: "art & craft" },
+  { text: "Draw your dream outfit on paper", category: "art & craft" },
+  { text: "Draw your current emotions", category: "art & craft" },
+  { text: "Make a Greek theater mask", category: "art & craft" },
+  { text: "Draw your childhood stuffie", category: "art & craft" },
+  { text: "Make a patch", category: "art & craft" },
+  { text: "Decorate clothing", category: "art & craft" },
+  { text: "Decorate your phone case", category: "art & craft" },
+  { text: "Make duck tape art", category: "art & craft" },
+  { text: "Decorate your belongings", category: "art & craft" },
+  { text: "Draw yourself", category: "art & craft" },
+  { text: "Make a garland", category: "art & craft" },
+  { text: "Decorate candles", category: "art & craft" },
 
-function downloadImageAsPdf(img) {
-  const element = document.createElement('div');
-  element.style.padding = '10px';
-  element.style.backgroundColor = '#fff';
+  { text: "Write a letter", category: "writing & music" },
+  { text: "Find a pen pal", category: "writing & music" },
+  { text: "Write a song just for fun", category: "writing & music" },
+  { text: "Write a bucket list", category: "writing & music" },
+  { text: "Write affirmations for yourself", category: "writing & music" },
+  { text: "Make a vision board", category: "writing & music" },
+  { text: "Journal", category: "writing & music" },
+  { text: "Make a set list of your favourite songs on paper", category: "writing & music" },
+  { text: "Start a journal about all of your favourite things", category: "writing & music" },
+  { text: "Write a song about your favourite book", category: "writing & music" },
+  { text: "Write an AU of your favourite show, movie, or book", category: "writing & music" },
+  { text: "Listen to a genre of music you have never heard before", category: "writing & music" },
+  { text: "Listen to the radio", category: "writing & music" },
+  { text: "Make a presentation about something you love", category: "writing & music" },
+  { text: "Research a subject you know nothing about", category: "writing & music" },
+  { text: "Read a book", category: "writing & music" },
+  { text: "Go to the library and get a book on a topic new to you", category: "writing & music" },
+  { text: "Make a calendar", category: "writing & music" },
+  { text: "Make/learn a dance", category: "writing & music" },
 
-  const imgEl = document.createElement('img');
-  imgEl.src = img.data;
-  imgEl.style.maxWidth = '100%';
-  imgEl.style.height = 'auto';
+  { text: "Bake something", category: "make & build" },
+  { text: "Try a new hobby", category: "make & build" },
+  { text: "Make a cardboard craft", category: "make & build" },
+  { text: "Make a junk journal page out of recycling", category: "make & build" },
+  { text: "Make something out of trash", category: "make & build" },
+  { text: "Make bracelets", category: "make & build" },
+  { text: "Make a scrunchie", category: "make & build" },
+  { text: "Make custom trading cards", category: "make & build" },
+  { text: "Design a board game", category: "make & build" },
+  { text: "Make a sock puppet and a little play for them", category: "make & build" },
+  { text: "Make a headband", category: "make & build" },
+  { text: "Make a belt chain", category: "make & build" },
+  { text: "Make a keychain", category: "make & build" },
+  { text: "Make jewellery", category: "make & build" },
+  { text: "Make something from clay", category: "make & build" },
+  { text: "Sew a plush", category: "make & build" },
+  { text: "Make a cardboard sculpture", category: "make & build" },
+  { text: "Make a mini terrarium", category: "make & build" },
+  { text: "Make up a card game", category: "make & build" },
+  { text: "Make slime", category: "make & build" },
+  { text: "Make a pillow/blanket fort", category: "make & build" },
 
-  element.appendChild(imgEl);
+  { text: "Do a puzzle", category: "just for fun" },
+  { text: "Learn a new hairstyle", category: "just for fun" },
+  { text: "Make yourself a sensory bin", category: "just for fun" },
+];
 
-    const opt = } 
-    margin: 10,
- filename: (img.name || 'artwork').replace(/\.[^/.]+$/, '') + '.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-     html2canvas: { scale: 2 },
-    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+const CATEGORY_ALL = "all" as const;
+type ActivityFilter = ActivityCategory | typeof CATEGORY_ALL;
 
-      html2pdf().set(opt).from(element).save();
+const ACTIVITY_CATEGORIES: ActivityFilter[] = [
+  "all", "outdoors", "art & craft", "writing & music", "make & build", "just for fun",
+];
 
-async function downloadAllAsPdf(images) {
-  if(images.length === 0) 
-    alert('No images to download')
-    return;
- }
+const CATEGORY_COLORS: Record<ActivityCategory, string> = {
+  "outdoors":        "#a8cbb8",
+  "art & craft":     "#baaed0",
+  "writing & music": "#f5c88a",
+  "make & build":    "#f2b8b8",
+  "just for fun":    "#b8cce8",
+};
 
-   const opt = {
-    margin: 10,
-    filename: 'art-gallery.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+// ─── Songs ─────────────────────────────────────────────────────────────────────
+
+type Mood = "dreamy" | "melancholic" | "mysterious" | "cozy" | "energetic";
+
+interface Song { title: string; artist: string; album: string; }
+
+const SONGS: Record<Mood, Song[]> = {
+  dreamy: [
+    { title: "Orbiter",                          artist: "Noah Kahan",              album: "" },
+    { title: "The Seed",                          artist: "Aurora",                  album: "" },
+    { title: "Little Boy in the Grass",           artist: "Aurora",                  album: "" },
+    { title: "Drift Away (Omnicord)",             artist: "Trillan",                 album: "" },
+    { title: "Atlas",                             artist: "Lilith Max",              album: "" },
+    { title: "Anthem for a Seventeen Year Old Girl", artist: "Yeule",               album: "" },
+    { title: "August Rain",                       artist: "Willowbrook",             album: "" },
+    { title: "Star V",                            artist: "Sofia Isella",            album: "" },
+    { title: "Watchers Crown",                    artist: "Cloudkissed",             album: "" },
+    { title: "The Moon Will Sing",                artist: "The Crane Wives",         album: "" },
+    { title: "Sugar Maple",                       artist: "Ebril",                   album: "" },
+    { title: "Campfire God Song",                 artist: "Willowbrook",             album: "" },
+    { title: "Roses",                             artist: "Iris Copperman",          album: "" },
+  ],
+  melancholic: [
+    { title: "The Hand",                          artist: "Anabelle Dinda",          album: "" },
+    { title: "Dog Prophecies",                    artist: "Josie Edwards",           album: "" },
+    { title: "November",                          artist: "Sparkbird",               album: "" },
+    { title: "Anticipate Heartbreak",             artist: "Aurora",                  album: "" },
+    { title: "Never the Muse",                    artist: "Elio Mei",                album: "" },
+    { title: "Suffering",                         artist: "Amelie Farren",           album: "" },
+    { title: "Kitchen Light",                     artist: "Josie Edwards",           album: "" },
+    { title: "The Loneliest Girl in the World",   artist: "Noah Florce",             album: "" },
+    { title: "Hope Ur Ok",                        artist: "Olivia Rodrigo",          album: "" },
+    { title: "Dark",                              artist: "Maddie Ashman",           album: "" },
+    { title: "23",                                artist: "Noah Kahan",              album: "" },
+    { title: "The Great Divide",                  artist: "Noah Kahan",              album: "" },
+    { title: "The Poet and Her Vice",             artist: "Josie Edwards",           album: "" },
+    { title: "White Blank Page",                  artist: "Mumford & Sons",          album: "" },
+    { title: "Lavender",                          artist: "Penelope Scott",          album: "" },
+    { title: "At the Cemetery",                   artist: "Elio May & Cloudkissed",  album: "" },
+    { title: "Placing the Blame",                 artist: "Self",                    album: "" },
+  ],
+  mysterious: [
+    { title: "And the Hound",                     artist: "Yaelokre",                album: "" },
+    { title: "Cryptid",                           artist: "Cavetown",                album: "" },
+    { title: "Preybirds",                         artist: "Rabbitology",             album: "" },
+    { title: "DNA Guarantee",                     artist: "Kodi Rhianne",            album: "" },
+    { title: "Bog Bodies",                        artist: "Rabbitology",             album: "" },
+    { title: "The Bird Song",                     artist: "Noah Florce",             album: "" },
+    { title: "Alien Blues",                       artist: "Vundabar",                album: "" },
+    { title: "Come as You Are",                   artist: "Nirvana",                 album: "" },
+    { title: "House of Wolves",                   artist: "My Chemical Romance",     album: "" },
+    { title: "Devil Town",                        artist: "Cavetown",                album: "" },
+    { title: "Turtle Island",                     artist: "Renee Christine",         album: "" },
+    { title: "Stranger in You",                   artist: "Ebril",                   album: "" },
+    { title: "Animal",                            artist: "Sir Chloe",               album: "" },
+    { title: "Mawce",                             artist: "Everybody's Worried About Owen", album: "" },
+  ],
+  cozy: [
+    { title: "Elizabeth",                         artist: "Cult Summer",             album: "" },
+    { title: "The Way You Make Me Feel",          artist: "Michael Jackson",         album: "" },
+    { title: "I Want to Hold Your Hand",          artist: "The Beatles",             album: "" },
+    { title: "Doors",                             artist: "Noah Kahan",              album: "" },
+    { title: "Poarch Light",                      artist: "Noah Kahan",              album: "" },
+    { title: "Sweet Tooth",                       artist: "Cavetown",                album: "" },
+    { title: "Lullaby",                           artist: "Cavetown",                album: "" },
+    { title: "New House",                         artist: "Josie Edwards",           album: "" },
+    { title: "Cricket in the Corner",             artist: "Lu La Belle",             album: "" },
+    { title: "Home",                              artist: "Cavetown",                album: "" },
+    { title: "500 Miles",                         artist: "Peter, Paul and Mary",    album: "" },
+    { title: "Good Girls",                        artist: "Josie Edwards",           album: "" },
+    { title: "Great Escape",                      artist: "Josie Edwards",           album: "" },
+    { title: "Settle the Score",                  artist: "Cult Summer",             album: "" },
+    { title: "The Cure",                          artist: "Olivia Rodrigo",          album: "" },
+  ],
+  energetic: [
+    { title: "My Alcoholic Friends",              artist: "The Dresden Dolls",       album: "" },
+    { title: "Be Nice to Me",                     artist: "The Front Bottoms",       album: "" },
+    { title: "Blitzkrieg Bop",                    artist: "The Ramones",             album: "" },
+    { title: "Smells Like Teen Spirit",           artist: "Malia J",                album: "" },
+    { title: "American Idiot",                    artist: "Green Day",               album: "" },
+    { title: "She",                               artist: "Green Day",               album: "" },
+    { title: "Anarchy",                           artist: "Egg",                     album: "" },
+    { title: "Running with Scissors",             artist: "Cavetown",                album: "" },
+    { title: "Girls",                             artist: "Girl in Red",             album: "" },
+    { title: "High Hopes",                        artist: "Josie Edwards",           album: "" },
+    { title: "Juliet",                            artist: "Cavetown",                album: "" },
+    { title: "23 (live energy)",                  artist: "Noah Kahan",              album: "" },
+    { title: "Anthem for a Seventeen Year Old Girl", artist: "Yeule",               album: "" },
+  ],
+};
+
+const MOOD_META: Record<Mood, { label: string; sub: string }> = {
+  dreamy:      { label: "Dreamy",      sub: "soft, floating, not-quite-here" },
+  melancholic: { label: "Melancholic", sub: "bittersweet and beautiful" },
+  mysterious:  { label: "Mysterious",  sub: "dark edges, hidden meanings" },
+  cozy:        { label: "Cozy",        sub: "warm, still, held" },
+  energetic:   { label: "Energetic",   sub: "wings beating fast" },
+};
+
+// ─── Palette ───────────────────────────────────────────────────────────────────
+
+interface PaletteColor { hex: string; name: string; role: string; }
+interface GeneratedPalette { name: string; colors: PaletteColor[]; }
+
+const PALETTE_NAMES = [
+  "Nocturne Wings", "Luna Dust", "Forest Phantom", "Silk Moth", "Night Bloomer",
+  "Dusk Emergence", "Velvet Antennae", "Ancient Scales", "Moonpowder", "Shadow Garden",
+  "Dappled Wing", "Twilight Chrysalis", "Amber Fade", "Still Water", "Ember Ash",
+  "Pale Emergence", "Ink & Petal", "Fog & Rust",
+];
+
+function hslToHex(h: number, s: number, l: number): string {
+  s /= 100; l /= 100;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n: number) => {
+    const k = (n + h / 30) % 12;
+    const c = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * c).toString(16).padStart(2, "0");
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+
+function buildPalette(): GeneratedPalette {
+  const h = Math.floor(Math.random() * 360);
+  const s = 12 + Math.floor(Math.random() * 28);
+  const colors: PaletteColor[] = [
+    { hex: hslToHex(h, s * 0.5, 12),           name: "Depth",  role: "base / bottoms" },
+    { hex: hslToHex((h + 20) % 360, s * 0.8, 30), name: "Anchor", role: "jacket / bag" },
+    { hex: hslToHex((h + 40) % 360, s, 52),    name: "Body",   role: "main garment" },
+    { hex: hslToHex((h + 180) % 360, s * 0.6, 72), name: "Lift",   role: "accent / scarf" },
+    { hex: hslToHex((h + 200) % 360, s * 0.3, 88), name: "Breath", role: "jewelry / details" },
+  ];
+  return { name: PALETTE_NAMES[Math.floor(Math.random() * PALETTE_NAMES.length)], colors };
+}
+
+// ─── Gallery ───────────────────────────────────────────────────────────────────
+
+interface GalleryImage { id: string; url: string; name: string; liked: boolean; bookmarked: boolean; }
+
+// ─── Moth SVG ──────────────────────────────────────────────────────────────────
+
+function MothSVG({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 200 180" className={className} aria-hidden="true" fill="currentColor">
+      {/* antennae */}
+      <path d="M97,52 Q88,34 74,17" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.65" />
+      <path d="M103,52 Q112,34 126,17" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" opacity="0.65" />
+      <circle cx="74" cy="17" r="2.5" opacity="0.55" />
+      <circle cx="126" cy="17" r="2.5" opacity="0.55" />
+      {/* upper wings */}
+      <path d="M100,58 C84,42 52,26 22,42 C12,56 22,76 54,78 C76,79 96,74 100,71 Z" opacity="0.88" />
+      <path d="M100,58 C116,42 148,26 178,42 C188,56 178,76 146,78 C124,79 104,74 100,71 Z" opacity="0.88" />
+      {/* inner wing markings */}
+      <path d="M100,63 C86,50 63,44 40,54 C33,63 40,74 62,76 C80,77 97,71 100,69 Z" opacity="0.12" />
+      <path d="M100,63 C114,50 137,44 160,54 C167,63 160,74 138,76 C120,77 103,71 100,69 Z" opacity="0.12" />
+      {/* eye spots */}
+      <circle cx="57"  cy="62" r="6"   opacity="0.22" />
+      <circle cx="143" cy="62" r="6"   opacity="0.22" />
+      <circle cx="57"  cy="62" r="2.8" opacity="0.65" />
+      <circle cx="143" cy="62" r="2.8" opacity="0.65" />
+      {/* lower wings */}
+      <path d="M100,71 C82,67 46,82 30,108 C38,126 68,118 88,105 C97,99 100,87 100,81 Z" opacity="0.72" />
+      <path d="M100,71 C118,67 154,82 170,108 C162,126 132,118 112,105 C103,99 100,87 100,81 Z" opacity="0.72" />
+      {/* lower wing inner shade */}
+      <path d="M100,76 C88,72 62,84 50,104 C56,114 76,110 92,100 C98,96 100,86 100,81 Z" opacity="0.1" />
+      <path d="M100,76 C112,72 138,84 150,104 C144,114 124,110 108,100 C102,96 100,86 100,81 Z" opacity="0.1" />
+      {/* body */}
+      <ellipse cx="100" cy="79" rx="4.5" ry="29" />
+      {/* segment lines */}
+      <line x1="95.8" y1="70"  x2="104.2" y2="70"  stroke="#0d0b09" strokeWidth="0.7" opacity="0.35" />
+      <line x1="95.5" y1="77"  x2="104.5" y2="77"  stroke="#0d0b09" strokeWidth="0.7" opacity="0.35" />
+      <line x1="95.5" y1="84"  x2="104.5" y2="84"  stroke="#0d0b09" strokeWidth="0.7" opacity="0.35" />
+      <line x1="95.8" y1="91"  x2="104.2" y2="91"  stroke="#0d0b09" strokeWidth="0.7" opacity="0.35" />
+      {/* head */}
+      <circle cx="100" cy="53" r="5.5" />
+    </svg>
+  );
+}
+
+// ─── Section divider ───────────────────────────────────────────────────────────
+
+function Divider({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-4 mb-14">
+      <div className="h-px flex-1" style={{ background: "var(--border)" }} />
+      <span className="font-display text-xs tracking-[0.35em] uppercase text-rainbow whitespace-nowrap">
+        {label}
+      </span>
+      <div className="h-px flex-1" style={{ background: "var(--border)" }} />
+    </div>
+  );
+}
+
+// ─── App ───────────────────────────────────────────────────────────────────────
+
+export default function App() {
+  const [activeSection, setActiveSection] = useState("hero");
+
+  // affirmation
+  const [affirmIdx, setAffirmIdx]     = useState(() => Math.floor(Math.random() * AFFIRMATIONS.length));
+  const [affirmVis, setAffirmVis]     = useState(true);
+
+  // songs
+  const [mood, setMood]               = useState<Mood | null>(null);
+  const [song, setSong]               = useState<Song | null>(null);
+  const [songVis, setSongVis]         = useState(true);
+
+  // palette
+  const [palette, setPalette]         = useState<GeneratedPalette | null>(null);
+  const [paletteVis, setPaletteVis]   = useState(true);
+
+  // breathwork & grounding
+  const [calmTechnique, setCalmTechnique]   = useState<"breathing" | "grounding">("breathing");
+  const [breathActive, setBreathActive]     = useState(false);
+  const [breathPhase, setBreathPhase]       = useState(0);
+  const [breathCount, setBreathCount]       = useState(BOX_PHASES[0].duration);
+  const [groundStep, setGroundStep]         = useState(0);
+  const [groundDone, setGroundDone]         = useState(false);
+  const breathRef                           = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // activities
+  const [activityFilter, setActivityFilter] = useState<ActivityFilter>("all");
+  const [activity, setActivity]             = useState<Activity | null>(null);
+  const [activityVis, setActivityVis]       = useState(true);
+  const [activityHistory, setActivityHistory] = useState<Activity[]>([]);
+
+  // gallery
+  const [images, setImages]           = useState<GalleryImage[]>([]);
+  const [dragOver, setDragOver]       = useState(false);
+  const [galleryFilter, setGalleryFilter] = useState<"all" | "liked" | "bookmarked">("all");
+  const fileRef                       = useRef<HTMLInputElement>(null);
+
+  // scroll spy
+  useEffect(() => {
+    const ids = ["hero", "affirmations", "songs", "palette", "activities", "calm", "gallery"];
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach(e => { if (e.isIntersecting) setActiveSection(e.target.id); }),
+      { threshold: 0.35 }
+    );
+    ids.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+    return () => obs.disconnect();
+  }, []);
+
+  const scrollTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
+  // ── Affirmation ──
+  const nextAffirmation = () => {
+    setAffirmVis(false);
+    setTimeout(() => {
+      setAffirmIdx(prev => {
+        let n: number;
+        do { n = Math.floor(Math.random() * AFFIRMATIONS.length); } while (n === prev);
+        return n;
+      });
+      setAffirmVis(true);
+    }, 280);
   };
 
-    const container = document.createElement('div');
-  container.style.backgroundColor = '#fff';
-
-  for (let i = 0; i < images.length; i++) 
-    const img = images[i];
-    const pageDiv = document.createElement('div');
-    pageDiv.style.pageBreakAfter = 'always';
-    pageDiv.style.padding = '10px';
-     pageDiv.style.textAlign = 'center';
-
-  const titleEl = document.createElement('h2');
-    titleEl.textContent = img.name || 'Untitled';
-    titleEl.style.marginBottom = '10px';
-    pageDiv.appendChild(titleEl);
-
-       const imgEl = document.createElement('img');
-    imgEl.src = img.data;
-  imgEl.style.maxWidth = '90%';
-    imgEl.style.maxHeight = '80vh';
-
-      pageDiv.appendChild(imgEl);
-    container.appendChild(pageDiv);
-  {
-
-    html2pdf().set(opt).from(container).save();
-}
-
-const LIKES_KEY = 'artGallery.likes.v1';
-let likedImages = new Set();
-const viewerLikeBtn = document.getElementById('viewerLikeBtn');
-
-function saveLikes() {
-  try {
-    localStorage.setItem(LIKES_KEY, JSON.stringify(Array.from(likedImages)));
-      } catch (e) {
-    console.warn('Could not save liked image IDs', e);
-  }
-}
-
-function loadLikes() {
-  const raw = localStorage.getItem(LIKES_KEY);
-  if (!raw) return;
-  try {
-      likedImages = new Set(JSON.parse(raw));
-  } catch (e) {
-    likedImages = new Set();
-  }
-}
-
-function likeImage(id) {
-  const image = images.find(i => i.id === id);
-  if (!image || likedImages.has(id)) return;
-
-   image.likes = (image.likes || 0) + 1;
-  likedImages.add(id);
-    save();
-  saveLikes();
-  render();
-}
-function updateViewerLikeButton() {
-  if (!currentViewingImage) return;
-    if (likedImages.has(currentViewingImage.id)){
-    viewerLikeBtn.textContent = 'Liked';
-    viewerLikeBtn.disabled = true;
-  } else {
-       viewerLikeBtn.textContent = '❤️ Like';
-    viewerLikeBtn.disabled = false;
-  }
-}
-
-viewerLikeBtn.addEventListener('click', () => {
-  if (currentViewingImage) likeImage(currentViewingImage.id);
-});
-
-const COMMUNITY_POSTS_KEY = 'artGallery.community.posts.v1';
-const BOOKMARKS_KEY = 'artGallery.bookmarks.v1';
-
-let communityPosts = [];
-let bookmarkedPostIds = new Set();
-let currentViewingCommunityPost = null;
-
-function saveCommunityPosts() {
-  try {
-    localStorage.setItem(COMMUNITY_POSTS_KEY, JSON.stringify(communityPosts));
-  } catch (e) {
-       console.warn('Could not save community posts', e);
-  }
-}
-
-function loadCommunityPosts() {
-  const raw = localStorage.getItem(COMMUNITY_POSTS_KEY);
-  if (!raw) return;
-  try {
-       communityPosts = JSON.parse(raw);
-  } catch (e) {
-    communityPosts = [];
-  }
-}
-
-function saveBookmarks() {
-  try {
-    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(Array.from(bookmarkedPostIds)));
-  } catch (e) {
-       console.warn('Could not save bookmarks', e);
-  }
-}
-
-function loadBookmarks() {
-  const raw = localStorage.getItem(BOOKMARKS_KEY);
-  if (!raw) return;
-   try {
-    bookmarkedPostIds = new Set(JSON.parse(raw));
-  } catch (e) {
-      bookmarkedPostIds = new Set();
-  }
-}
-
-function shareToiCommunity(imageId) {
-  const image = images.find(i => i.id === imageId);
-  if (!image) return;
-
-    const post = {
-    id: 'post-' + Date.now().toString(36) + Math.random().toString(36).slice(2),
-    originalImageId: imageId,
-     name: image.name,
-    data: image.data,
-    likes: 0,
-    author: 'Anonymous',
-    createdAt: Date.now(),
-      sharedFrom: 'My Gallery'
+  // ── Song ──
+  const pickSong = () => {
+    if (!mood) return;
+    setSongVis(false);
+    setTimeout(() => { setSong(SONGS[mood][Math.floor(Math.random() * SONGS[mood].length)]); setSongVis(true); }, 280);
   };
 
-    communityPosts.unshift(post);
-  saveCommunityPosts();
-  renderCommunityGallery();
+  // ── Breathing ──
+  useEffect(() => {
+    if (!breathActive) { if (breathRef.current) clearInterval(breathRef.current); return; }
+    breathRef.current = setInterval(() => {
+      setBreathCount(prev => {
+        if (prev > 1) return prev - 1;
+        setBreathPhase(p => {
+          const next = (p + 1) % BOX_PHASES.length;
+          setBreathCount(BOX_PHASES[next].duration);
+          return next;
+        });
+        return BOX_PHASES[0].duration;
+      });
+    }, 1000);
+    return () => { if (breathRef.current) clearInterval(breathRef.current); };
+  }, [breathActive]);
 
-    alert(`✅ "${image.name}" shared to community!`);
+  const startBreathing = () => { setBreathPhase(0); setBreathCount(BOX_PHASES[0].duration); setBreathActive(true); };
+  const stopBreathing  = () => { setBreathActive(false); setBreathPhase(0); setBreathCount(BOX_PHASES[0].duration); };
+
+  const resetGrounding = () => { setGroundStep(0); setGroundDone(false); };
+
+  // ── Activities ──
+  const pickActivity = () => {
+    const pool = activityFilter === "all"
+      ? ACTIVITIES
+      : ACTIVITIES.filter(a => a.category === activityFilter);
+    setActivityVis(false);
+    setTimeout(() => {
+      const next = pool[Math.floor(Math.random() * pool.length)];
+      setActivity(next);
+      setActivityHistory(prev => [next, ...prev].slice(0, 5));
+      setActivityVis(true);
+    }, 280);
+  };
+
+  // ── Palette ──
+  const nextPalette = () => {
+    setPaletteVis(false);
+    setTimeout(() => { setPalette(buildPalette()); setPaletteVis(true); }, 280);
+  };
+
+  // ── Gallery ──
+  const addFiles = (files: FileList) => {
+    const next: GalleryImage[] = Array.from(files)
+      .filter(f => f.type.startsWith("image/"))
+      .map(f => ({ id: `${Date.now()}-${Math.random()}`, url: URL.createObjectURL(f), name: f.name, liked: false, bookmarked: false }));
+    setImages(prev => [...prev, ...next]);
+  };
+
+  const removeImage    = (id: string) => setImages(prev => prev.filter(i => i.id !== id));
+  const toggleLike     = (id: string) => setImages(prev => prev.map(i => i.id === id ? { ...i, liked: !i.liked } : i));
+  const toggleBookmark = (id: string) => setImages(prev => prev.map(i => i.id === id ? { ...i, bookmarked: !i.bookmarked } : i));
+
+  // nav links
+  const NAV_LINKS: { id: string; label: string }[] = [
+    { id: "affirmations", label: "Affirmations" },
+    { id: "songs",        label: "Songs" },
+    { id: "palette",      label: "Palette" },
+    { id: "activities",   label: "Activities" },
+    { id: "calm",         label: "Calm" },
+    { id: "gallery",      label: "Gallery" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background text-foreground font-sans">
+
+      {/* ── Navigation ── */}
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10 py-4 border-b border-border"
+        style={{ background: "rgba(247,243,236,0.88)", backdropFilter: "blur(12px)" }}
+      >
+        <button
+          onClick={() => scrollTo("hero")}
+          className="flex items-center gap-2.5 group"
+        >
+          <MothSVG className="w-7 h-7 text-primary transition-opacity group-hover:opacity-70" />
+          <span className="font-display text-xs tracking-[0.25em] uppercase text-rainbow">
+            joy.com
+          </span>
+        </button>
+        <div className="hidden md:flex items-center gap-7">
+          {NAV_LINKS.map(({ id, label }) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className={`text-xs tracking-[0.2em] uppercase transition-colors ${
+                activeSection === id
+                  ? "text-accent"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </nav>
+
+      {/* ── Hero ── */}
+      <section
+        id="hero"
+        className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16"
+      >
+        <div className="animate-moth-float mb-6">
+          <MothSVG className="w-44 h-44 md:w-56 md:h-56 text-primary mx-auto" />
+        </div>
+        <h1 className="font-display text-5xl md:text-7xl tracking-[0.12em] text-rainbow mb-5">
+          joy.com
+        </h1>
+        <p
+          className="font-serif text-lg text-muted-foreground max-w-sm mx-auto leading-loose mb-12"
+          style={{ fontFamily: "var(--font-serif)" }}
+        >
+          A quiet corner for creatures of the night.
+        </p>
+        <button
+          onClick={() => scrollTo("affirmations")}
+          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <span className="text-xs tracking-[0.3em] uppercase">enter</span>
+          <ChevronDown className="w-4 h-4 animate-bounce" />
+        </button>
+      </section>
+
+      {/* ── Affirmations ── */}
+      <section
+        id="affirmations"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-28"
+      >
+        <div className="w-full max-w-2xl">
+          <Divider label="Daily Affirmation" />
+
+          <div className="relative flex flex-col items-center justify-center min-h-[180px] py-8">
+            <MothSVG
+              className="w-10 h-10 text-primary/20 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2"
+            />
+            <blockquote
+              className="text-center px-4 transition-opacity duration-280 text-rainbow"
+              style={{
+                opacity: affirmVis ? 1 : 0,
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(1.2rem, 3vw, 1.75rem)",
+                lineHeight: 1.7,
+                fontStyle: "italic",
+              }}
+            >
+              &ldquo;{AFFIRMATIONS[affirmIdx]}&rdquo;
+            </blockquote>
+          </div>
+
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={nextAffirmation}
+              className="flex items-center gap-2 text-xs tracking-[0.25em] uppercase text-muted-foreground border border-border px-7 py-3.5 hover:border-primary hover:text-foreground transition-all"
+            >
+              <RefreshCw className="w-3 h-3" />
+              New Affirmation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Songs ── */}
+      <section
+        id="songs"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-28 bg-card"
+      >
+        <div className="w-full max-w-2xl">
+          <Divider label="Song Recommendation" />
+
+          <p
+            className="text-center text-muted-foreground text-sm mb-9 tracking-wide"
+            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+          >
+            How are you feeling tonight?
+          </p>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2.5 mb-10">
+            {(Object.keys(MOOD_META) as Mood[]).map(m => (
+              <button
+                key={m}
+                onClick={() => setMood(m)}
+                className={`flex flex-col items-center gap-1.5 p-3.5 border text-center transition-all ${
+                  mood === m
+                    ? "border-primary bg-primary/10 text-foreground"
+                    : "border-border text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <span className="text-sm font-sans">{MOOD_META[m].label}</span>
+                <span className="text-xs text-muted-foreground/55 leading-tight" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                  {MOOD_META[m].sub}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <div className="flex justify-center mb-10">
+            <button
+              onClick={pickSong}
+              disabled={!mood}
+              className="flex items-center gap-2.5 text-xs tracking-[0.25em] uppercase px-9 py-3.5 bg-primary text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-25 disabled:cursor-not-allowed"
+            >
+              <Music className="w-3.5 h-3.5" />
+              Find a Song
+            </button>
+          </div>
+
+          {song && (
+            <div
+              className="border border-border p-9 text-center transition-opacity duration-280"
+              style={{ opacity: songVis ? 1 : 0 }}
+            >
+              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-5">
+                Tonight, listen to
+              </p>
+              <h3 className="font-display text-2xl text-rainbow mb-2 tracking-wide">
+                {song.title}
+              </h3>
+              <p className="text-foreground/70 text-base">{song.artist}</p>
+              {song.album && (
+                <p
+                  className="text-muted-foreground/50 text-sm mt-1"
+                  style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+                >
+                  {song.album}
+                </p>
+              )}
+              <button
+                onClick={pickSong}
+                className="mt-7 flex items-center gap-2 mx-auto text-xs text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase"
+              >
+                <Shuffle className="w-3 h-3" />
+                another one
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── Palette ── */}
+      <section
+        id="palette"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-28"
+      >
+        <div className="w-full max-w-2xl">
+          <Divider label="Outfit Color Palette" />
+
+          <p
+            className="text-center text-muted-foreground text-sm mb-10 tracking-wide"
+            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+          >
+            Generate a palette to dress from tonight.
+          </p>
+
+          <div className="flex justify-center mb-10">
+            <button
+              onClick={nextPalette}
+              className="flex items-center gap-2.5 text-xs tracking-[0.25em] uppercase px-8 py-3.5 border border-border text-muted-foreground hover:border-primary hover:text-foreground transition-all"
+            >
+              <Palette className="w-3.5 h-3.5" />
+              {palette ? "Generate New Palette" : "Generate Palette"}
+            </button>
+          </div>
+
+          {palette && (
+            <div
+              className="transition-opacity duration-280"
+              style={{ opacity: paletteVis ? 1 : 0 }}
+            >
+              <p className="text-center font-display text-lg tracking-widest text-rainbow mb-7">
+                {palette.name}
+              </p>
+
+              {/* color strip */}
+              <div className="flex h-28 mb-8 overflow-hidden border border-border">
+                {palette.colors.map((c, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 relative group transition-all duration-300 hover:flex-[1.6] cursor-default"
+                    style={{ backgroundColor: c.hex }}
+                  >
+                    <div className="absolute inset-0 flex items-end p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <span className="text-[10px] font-mono bg-black/50 text-white px-1.5 py-0.5">
+                        {c.hex}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* color details */}
+              <div className="grid grid-cols-5 gap-3">
+                {palette.colors.map((c, i) => (
+                  <div key={i} className="text-center">
+                    <div
+                      className="w-9 h-9 mx-auto mb-2.5 border border-border/40"
+                      style={{ backgroundColor: c.hex }}
+                    />
+                    <p className="text-xs text-foreground/90 font-sans mb-0.5">{c.name}</p>
+                    <p className="text-xs text-muted-foreground/55 leading-tight font-sans">{c.role}</p>
+                    <p className="text-[10px] text-muted-foreground font-mono mt-1.5">{c.hex}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── Activities ── */}
+      <section
+        id="activities"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-28"
+      >
+        <div className="w-full max-w-2xl">
+          <Divider label="Screen-Free Activity" />
+
+          <p
+            className="text-center text-muted-foreground text-sm mb-10 tracking-wide"
+            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+          >
+            Put the screen down. Here&apos;s something to do instead.
+          </p>
+
+          {/* category filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {ACTIVITY_CATEGORIES.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActivityFilter(cat)}
+                className={`text-xs tracking-[0.18em] uppercase px-4 py-2 border transition-all ${
+                  activityFilter === cat
+                    ? "border-primary bg-primary/10 text-foreground"
+                    : "border-border text-muted-foreground hover:border-muted-foreground hover:text-foreground"
+                }`}
+                style={
+                  activityFilter === cat && cat !== "all"
+                    ? { borderColor: CATEGORY_COLORS[cat as ActivityCategory], color: CATEGORY_COLORS[cat as ActivityCategory] }
+                    : {}
+                }
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* generate button */}
+          <div className="flex justify-center mb-10">
+            <button
+              onClick={pickActivity}
+              className="flex items-center gap-2.5 text-xs tracking-[0.25em] uppercase px-9 py-3.5 bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+            >
+              <Leaf className="w-3.5 h-3.5" />
+              Give Me an Activity
+            </button>
+          </div>
+
+          {/* result card */}
+          {activity && (
+            <div
+              className="border border-border p-9 text-center mb-8 transition-opacity duration-280"
+              style={{ opacity: activityVis ? 1 : 0 }}
+            >
+              <div className="flex justify-center mb-5">
+                <span
+                  className="text-[10px] tracking-[0.3em] uppercase px-3 py-1 border"
+                  style={{
+                    color: CATEGORY_COLORS[activity.category],
+                    borderColor: CATEGORY_COLORS[activity.category] + "55",
+                    background: CATEGORY_COLORS[activity.category] + "14",
+                  }}
+                >
+                  {activity.category}
+                </span>
+              </div>
+              <p
+                className="text-2xl md:text-3xl text-rainbow leading-relaxed"
+                style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+              >
+                {activity.text}
+              </p>
+              <button
+                onClick={pickActivity}
+                className="mt-7 flex items-center gap-2 mx-auto text-xs text-muted-foreground hover:text-foreground transition-colors tracking-widest uppercase"
+              >
+                <Shuffle className="w-3 h-3" />
+                try another
+              </button>
+            </div>
+          )}
+
+          {/* recent history */}
+          {activityHistory.length > 1 && (
+            <div>
+              <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground/50 text-center mb-4">
+                Recent suggestions
+              </p>
+              <div className="space-y-2">
+                {activityHistory.slice(1).map((a, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 px-4 py-2.5 border border-border/50 text-sm text-muted-foreground"
+                  >
+                    <span
+                      className="w-1.5 h-1.5 flex-shrink-0"
+                      style={{ background: CATEGORY_COLORS[a.category] }}
+                    />
+                    <span>{a.text}</span>
+                    <span
+                      className="ml-auto text-[10px] tracking-widest uppercase flex-shrink-0"
+                      style={{ color: CATEGORY_COLORS[a.category] + "aa" }}
+                    >
+                      {a.category}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── Calm ── */}
+      <section
+        id="calm"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-28 bg-card"
+      >
+        <div className="w-full max-w-xl">
+          <Divider label="Calm Down" />
+
+          <p
+            className="text-center text-muted-foreground text-sm mb-10 tracking-wide"
+            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+          >
+            Take a moment. You&apos;re safe here.
+          </p>
+
+          {/* technique toggle */}
+          <div className="flex justify-center mb-12">
+            <div className="flex border border-border">
+              {(["breathing", "grounding"] as const).map(t => (
+                <button
+                  key={t}
+                  onClick={() => { setCalmTechnique(t); stopBreathing(); resetGrounding(); }}
+                  className={`px-6 py-2.5 text-xs tracking-[0.2em] uppercase transition-all ${
+                    calmTechnique === t
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {t === "breathing" ? "Box Breathing" : "5-4-3-2-1"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Box Breathing ── */}
+          {calmTechnique === "breathing" && (
+            <div className="flex flex-col items-center">
+              {/* animated circle */}
+              <div className="relative flex items-center justify-center mb-10" style={{ width: 220, height: 220 }}>
+                {/* outer ring */}
+                <div
+                  className="absolute rounded-full border-2 border-primary/30 transition-all"
+                  style={{
+                    width:  breathActive && BOX_PHASES[breathPhase].big ? 200 : 140,
+                    height: breathActive && BOX_PHASES[breathPhase].big ? 200 : 140,
+                    transitionDuration: `${BOX_PHASES[breathPhase].duration * 1000}ms`,
+                    transitionTimingFunction: BOX_PHASES[breathPhase].label === "Inhale" ? "ease-in" : BOX_PHASES[breathPhase].label === "Exhale" ? "ease-out" : "linear",
+                  }}
+                />
+                {/* inner filled circle */}
+                <div
+                  className="absolute rounded-full bg-primary/20 transition-all"
+                  style={{
+                    width:  breathActive && BOX_PHASES[breathPhase].big ? 180 : 120,
+                    height: breathActive && BOX_PHASES[breathPhase].big ? 180 : 120,
+                    transitionDuration: `${BOX_PHASES[breathPhase].duration * 1000}ms`,
+                    transitionTimingFunction: BOX_PHASES[breathPhase].label === "Inhale" ? "ease-in" : BOX_PHASES[breathPhase].label === "Exhale" ? "ease-out" : "linear",
+                  }}
+                />
+                {/* center content */}
+                <div className="relative text-center z-10">
+                  {breathActive ? (
+                    <>
+                      <p className="font-display text-lg text-rainbow tracking-widest mb-1">
+                        {BOX_PHASES[breathPhase].label}
+                      </p>
+                      <p className="text-3xl font-display text-foreground">{breathCount}</p>
+                      <p className="text-xs text-muted-foreground mt-1" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                        {BOX_PHASES[breathPhase].instruction}
+                      </p>
+                    </>
+                  ) : (
+                    <Wind className="w-8 h-8 text-primary/50 mx-auto" />
+                  )}
+                </div>
+              </div>
+
+              {/* phase indicators */}
+              {breathActive && (
+                <div className="flex gap-2 mb-8">
+                  {BOX_PHASES.map((p, i) => (
+                    <div
+                      key={i}
+                      className="flex flex-col items-center gap-1"
+                    >
+                      <div
+                        className="w-2 h-2 rounded-full transition-colors"
+                        style={{ background: i === breathPhase ? "var(--primary)" : "var(--border)" }}
+                      />
+                      <span className="text-[9px] tracking-widest uppercase text-muted-foreground/50">{p.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <button
+                onClick={breathActive ? stopBreathing : startBreathing}
+                className={`text-xs tracking-[0.25em] uppercase px-10 py-3.5 transition-all ${
+                  breathActive
+                    ? "border border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
+                    : "bg-primary text-primary-foreground hover:opacity-90"
+                }`}
+              >
+                {breathActive ? "Stop" : "Begin"}
+              </button>
+
+              {!breathActive && (
+                <p className="text-xs text-muted-foreground/50 mt-5 text-center max-w-xs" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                  Inhale 4 · Hold 4 · Exhale 4 · Hold 4 — repeat until calm.
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* ── 5-4-3-2-1 Grounding ── */}
+          {calmTechnique === "grounding" && (
+            <div className="flex flex-col items-center">
+              {groundDone ? (
+                <div className="text-center">
+                  <p
+                    className="text-2xl text-rainbow mb-4"
+                    style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+                  >
+                    Well done.
+                  </p>
+                  <p className="text-muted-foreground text-sm mb-8" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                    You are here. You are grounded. You are okay.
+                  </p>
+                  <button
+                    onClick={resetGrounding}
+                    className="flex items-center gap-2 text-xs tracking-[0.25em] uppercase text-muted-foreground border border-border px-7 py-3.5 hover:border-primary hover:text-foreground transition-all mx-auto"
+                  >
+                    <RefreshCw className="w-3 h-3" />
+                    Start Over
+                  </button>
+                </div>
+              ) : (
+                <>
+                  {/* step progress dots */}
+                  <div className="flex gap-3 mb-10">
+                    {GROUNDING_STEPS.map((s, i) => (
+                      <div key={i} className="flex flex-col items-center gap-1.5">
+                        <div
+                          className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-display transition-all"
+                          style={{
+                            background: i < groundStep ? s.color + "88" : i === groundStep ? s.color : "transparent",
+                            border: `1.5px solid ${i <= groundStep ? s.color : "var(--border)"}`,
+                            color: i <= groundStep ? "var(--foreground)" : "var(--muted-foreground)",
+                          }}
+                        >
+                          {s.count}
+                        </div>
+                        <span className="text-[9px] tracking-widest uppercase" style={{ color: i <= groundStep ? s.color : "var(--muted-foreground)", opacity: i <= groundStep ? 1 : 0.5 }}>
+                          {s.sense}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* current step card */}
+                  <div
+                    className="w-full border p-8 text-center mb-8 transition-all"
+                    style={{ borderColor: GROUNDING_STEPS[groundStep].color + "66", background: GROUNDING_STEPS[groundStep].color + "12" }}
+                  >
+                    <p
+                      className="text-4xl font-display text-rainbow mb-2"
+                    >
+                      {GROUNDING_STEPS[groundStep].count}
+                    </p>
+                    <p
+                      className="text-xs tracking-[0.3em] uppercase mb-5"
+                      style={{ color: GROUNDING_STEPS[groundStep].color }}
+                    >
+                      things you can {GROUNDING_STEPS[groundStep].sense}
+                    </p>
+                    <p
+                      className="text-foreground/80 leading-relaxed"
+                      style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+                    >
+                      {GROUNDING_STEPS[groundStep].prompt}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      if (groundStep < GROUNDING_STEPS.length - 1) setGroundStep(s => s + 1);
+                      else setGroundDone(true);
+                    }}
+                    className="text-xs tracking-[0.25em] uppercase px-10 py-3.5 bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
+                  >
+                    {groundStep < GROUNDING_STEPS.length - 1 ? "Done, next →" : "Finish"}
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── Gallery ── */}
+      <section
+        id="gallery"
+        className="min-h-screen flex flex-col items-center justify-center px-6 py-28 bg-card"
+      >
+        <div className="w-full max-w-4xl">
+          <Divider label="Your Gallery" />
+
+          <p
+            className="text-center text-muted-foreground text-sm mb-10 tracking-wide"
+            style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}
+          >
+            Art you&apos;ve made. Outfits you&apos;ve worn. Things worth keeping.
+          </p>
+
+          {/* drop zone */}
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={() => fileRef.current?.click()}
+            onKeyDown={e => e.key === "Enter" && fileRef.current?.click()}
+            onDrop={e => { e.preventDefault(); setDragOver(false); if (e.dataTransfer.files) addFiles(e.dataTransfer.files); }}
+            onDragOver={e => { e.preventDefault(); setDragOver(true); }}
+            onDragLeave={() => setDragOver(false)}
+            className={`border-2 border-dashed p-14 text-center cursor-pointer transition-all mb-10 select-none ${
+              dragOver
+                ? "border-primary bg-primary/5"
+                : "border-border hover:border-muted-foreground/60"
+            }`}
+          >
+            <Upload className="w-8 h-8 mx-auto mb-4 text-muted-foreground/60" />
+            <p className="text-muted-foreground text-sm mb-1">Drop images here, or click to upload</p>
+            <p className="text-muted-foreground/40 text-xs" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+              art, outfits, anything beautiful
+            </p>
+            <input
+              ref={fileRef}
+              type="file"
+              multiple
+              accept="image/*"
+              className="hidden"
+              onChange={e => e.target.files && addFiles(e.target.files)}
+            />
+          </div>
+
+          {images.length > 0 && (
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex gap-2">
+                {(["all", "liked", "bookmarked"] as const).map(f => (
+                  <button
+                    key={f}
+                    onClick={() => setGalleryFilter(f)}
+                    className={`flex items-center gap-1.5 text-xs tracking-[0.18em] uppercase px-3.5 py-2 border transition-all ${
+                      galleryFilter === f
+                        ? "border-primary text-foreground bg-primary/10"
+                        : "border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground"
+                    }`}
+                  >
+                    {f === "liked"      && <Heart className="w-3 h-3" />}
+                    {f === "bookmarked" && <Bookmark className="w-3 h-3" />}
+                    {f}
+                  </button>
+                ))}
+              </div>
+              <span className="text-xs text-muted-foreground/50">
+                {images.filter(i =>
+                  galleryFilter === "all" ? true :
+                  galleryFilter === "liked" ? i.liked : i.bookmarked
+                ).length} photo{images.length !== 1 ? "s" : ""}
+              </span>
+            </div>
+          )}
+
+          {images.length > 0 ? (() => {
+            const visible = images.filter(i =>
+              galleryFilter === "all" ? true :
+              galleryFilter === "liked" ? i.liked : i.bookmarked
+            );
+            return visible.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5">
+                {visible.map(img => (
+                  <div key={img.id} className="group relative aspect-square overflow-hidden bg-muted">
+                    <img
+                      src={img.url}
+                      alt={img.name}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+
+                    {/* persistent indicators when active */}
+                    {(img.liked || img.bookmarked) && (
+                      <div className="absolute top-2 left-2 flex gap-1.5 pointer-events-none">
+                        {img.liked && (
+                          <span className="w-5 h-5 flex items-center justify-center bg-black/50">
+                            <Heart className="w-2.5 h-2.5 fill-current text-rose-400" />
+                          </span>
+                        )}
+                        {img.bookmarked && (
+                          <span className="w-5 h-5 flex items-center justify-center bg-black/50">
+                            <Bookmark className="w-2.5 h-2.5 fill-current text-accent" />
+                          </span>
+                        )}
+                      </div>
+                    )}
+
+                    {/* hover overlay */}
+                    <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-2">
+                      {/* top row: remove */}
+                      <div className="flex justify-end">
+                        <button
+                          onClick={() => removeImage(img.id)}
+                          aria-label="Remove image"
+                          className="w-6 h-6 bg-background/80 flex items-center justify-center hover:bg-destructive hover:text-destructive-foreground transition-colors text-foreground"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      </div>
+                      {/* bottom row: like + bookmark */}
+                      <div className="flex gap-1.5">
+                        <button
+                          onClick={() => toggleLike(img.id)}
+                          aria-label={img.liked ? "Unlike" : "Like"}
+                          className={`flex items-center gap-1 px-2 py-1 text-xs border transition-all ${
+                            img.liked
+                              ? "border-rose-400/80 text-rose-400 bg-rose-400/15"
+                              : "border-white/30 text-white/80 hover:border-rose-400/60 hover:text-rose-400"
+                          }`}
+                        >
+                          <Heart className={`w-3 h-3 ${img.liked ? "fill-current" : ""}`} />
+                          {img.liked ? "Liked" : "Like"}
+                        </button>
+                        <button
+                          onClick={() => toggleBookmark(img.id)}
+                          aria-label={img.bookmarked ? "Remove bookmark" : "Bookmark"}
+                          className={`flex items-center gap-1 px-2 py-1 text-xs border transition-all ${
+                            img.bookmarked
+                              ? "border-accent/80 text-accent bg-accent/15"
+                              : "border-white/30 text-white/80 hover:border-accent/60 hover:text-accent"
+                          }`}
+                        >
+                          <Bookmark className={`w-3 h-3 ${img.bookmarked ? "fill-current" : ""}`} />
+                          {img.bookmarked ? "Saved" : "Save"}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-14 text-muted-foreground/30">
+                <p className="text-sm" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                  No {galleryFilter} photos yet.
+                </p>
+              </div>
+            );
+          })() : (
+            <div className="text-center py-14 text-muted-foreground/30">
+              <ImageIcon className="w-12 h-12 mx-auto mb-3 opacity-25" />
+              <p className="text-sm" style={{ fontFamily: "var(--font-serif)", fontStyle: "italic" }}>
+                Nothing here yet — upload something.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="py-14 border-t border-border text-center">
+        <MothSVG className="w-8 h-8 text-primary/30 mx-auto mb-4" />
+        <p className="text-xs tracking-[0.35em] text-rainbow uppercase font-display opacity-60">
+          joy.com &mdash; for night creatures
+        </p>
+      </footer>
+    </div>
+  );
 }
 
-function bookmarkPost(postId) {
-  const post = communityPosts.find(p => p.id === postId);
-  if (!post || bookmarkedPostIds.has(postId)) return;
-
-   bookmarkedPostIds.add(postId);
-  saveBookmarks();
-    renderCommunityGallery();
-      renderBookmarksGallery();
-  updateViewerBookmarkButton();
-
-  alert('🔖 Post bookmarked!');
-}
-
-function removeBookmark(postId) {
-bookmarkedPostIds.delete(postId);
-saveBookmarks();
-renderCommunityGallery();
-renderBookmarksGallery();
-updateViewerBookmarkButton();
-}
-
-function renderCommunityGallery() {
-const communityGallery = document.getElementById('communityGallery');
-
-  if (communityPosts.length === 0) {
-    communityGallery.innerHTML = '<p style="color:var(--muted);text-align:center">No posts in community yet — share your artwork!</p>';
-    return;
-  }
-
-  communityGallery.innerHTML = '';
-  communityPosts.forEach(post => {
-  const card = document.createElement('div');
-  card.className = 'card';
-
-  const imageEl = document.createElement('img');
-    imageEl.className = 'thumb';
-     imageEl.src = post.data;
-    imageEl.alt = post.name || 'Community Artwork';
-    imageEl.addEventListener('click', () => openCommunityViewer(post));
-
-    const meta = document.createElement('div');
-    meta.className = 'meta';
-
- const name = document.createElement('div');
- name.textContent = post.name || 'Untitled';
-
- const actions = document.createElement('div');
- actions.className = 'actions';
-
- const likeCount = document.createElement('span');
-    likeCount.className = 'likes';
-    likeCount.textContent = `${post.likes || 0} ❤️`;
-
-        const bookmarkBtn = document.createElement('button');
-    bookmarkBtn.className = 'action-btn';
-     bookmarkBtn.title = bookmarkedPostIds.has(post.id) ? 'Remove bookmark' : 'Bookmark this post';
-    bookmarkBtn.textContent = bookmarkedPostIds.has(post.id) ? '🔖 Bookmarked' : '🔖 Bookmark';
-     bookmarkBtn.disabled = bookmarkedPostIds.has(post.id);
-    bookmarkBtn.addEventListener('click', (e) => {
-         e.stopPropagation();
-      if (bookmarkedPostIds.has(post.id)) {
-        removeBookmark(post.id);
-           } else {
-        bookmarkPost(post.id);
-      }
-    });
-
-        actions.appendChild(likeCount);
-    actions.appendChild(bookmarkBtn);
-
-     meta.appendChild(name);
-    meta.appendChild(actions);
-
-     card.appendChild(imageEl);
-    card.appendChild(meta);
-    communityGallery.appendChild(card);
-  });
-}
-
-function renderBookmarksGallery() {
-  const bookmarksGallery = document.getElementById('bookmarksGallery');
-
-   const bookmarkedPosts = communityPosts.filter(p => bookmarkedPostIds.has(p.id));
-
-    if (bookmarkedPosts.length === 0) {
-    bookmarksGallery.innerHTML = '<p style="color:var(--muted);text-align:center">No bookmarks yet — explore the community!</p>';
-    return;
-  }
-
-   bookmarksGallery.innerHTML = '';
-  bookmarkedPosts.forEach(post => {
-  const card = document.createElement('div');
-  card.className = 'card';
-
-const imageEl = document.createElement('img');
-    imageEl.className = 'thumb';
-      imageEl.src = post.data;
-    imageEl.alt = post.name || 'Bookmarked Artwork';
-    imageEl.addEventListener('click', () => openCommunityViewer(post));
-
-const meta = document.createElement('div');
-    meta.className = 'meta';
-
-     const name = document.createElement('div');
-    name.textContent = post.name || 'Untitled';
-
-      const actions = document.createElement('div');
-    actions.className = 'actions';
-
-       const likeCount = document.createElement('span');
-    likeCount.className = 'likes';
-    likeCount.textContent = `${post.likes || 0} ❤️`;
-
-      const unbookmarkBtn = document.createElement('button');
-    unbookmarkBtn.className = 'action-btn remove';
-    unbookmarkBtn.textContent = '🗑️ Remove';
-    unbookmarkBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      removeBookmark(post.id);
-    });
-
-     actions.appendChild(likeCount);
-    actions.appendChild(unbookmarkBtn);
-
-    meta.appendChild(name);
-    meta.appendChild(actions);
-
-   card.appendChild(imageEl);
-    card.appendChild(meta);
-    bookmarksGallery.appendChild(card);
-  });
-}
-
-function openCommunityViewer(post) {
-  currentViewingCommunityPost = post;
-  currentViewingImage = null;
-
- viewerImg.src = post.data;
-  viewerImg.alt = post.name || 'Artwork';
-  viewerMeta.textContent = `${post.name || 'Untitled'} · ${post.likes || 0} like${post.likes === 1 ? '' : 's'} · Shared: ${new Date(post.createdAt).toLocaleDateString()}`;
-  
-  viewer.classList.remove('hidden');
-  updateViewerShareButton();
-  updateViewerBookmarkButton();
-}
-
-function updateViewerShareButton() {
-  const viewerShareBtn = document.getElementById('viewerShareBtn');
-  const viewerBookmarkBtn = document.getElementById('viewerBookmarkBtn');
-
-    if (currentViewingImage) {
-    viewerShareBtn.style.display = 'inline-block';
-   viewerBookmarkBtn.style.display = 'none';
-  } else if (currentViewingCommunityPost) {
-      viewerShareBtn.style.display = 'none';
-    viewerBookmarkBtn.style.display = 'inline-block';
-  }
-}
-
-function updateViewerBookmarkButton() {
-  const viewerBookmarkBtn = document.getElementById('viewerBookmarkBtn');
-
-    if (!currentViewingCommunityPost) return;
-
-      if (bookmarkedPostIds.has(currentViewingCommunityPost.id)) {
-    viewerBookmarkBtn.textContent = '🔖 Bookmarked';
-    viewerBookmarkBtn.disabled = true;
-      } else {
-    viewerBookmarkBtn.textContent = '🔖 Bookmark';
-    viewerBookmarkBtn.disabled = false;
-  }
-}
-
-function switchTab(tabName) {
-  document.querySelectorAll('.tab-content').forEach(el => {
-    el.classList.add('hidden');
-  });
-
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  if (tabName === 'gallery') {
-    document.getElementById('gallery').classList.remove('hidden');
-    document.getElementById('galleryControls').style.display = 'flex';
-  } else if (tabName === 'community') {
-    document.getElementById('communityTab').classList.remove('hidden');
-    document.getElementById('galleryControls').style.display = 'none';
-    renderCommunityGallery();
-      } else if (tabName === 'bookmarks') {
-    document.getElementById('bookmarksTab').classList.remove('hidden');
-    document.getElementById('galleryControls').style.display = 'none';
-    renderBookmarksGallery();
-  }
-
-event.target.classList.add('active');
-}
-
-document.addEventListener('DOMContentLoaded', () => {
- const viewerShareBtn = document.getElementById('viewerShareBtn');
- const viewerBookmarkBtn = document.getElementById('viewerBookmarkBtn');
-
-   viewerShareBtn?.addEventListener('click', () => {
-    if (currentViewingImage) {
-      shareToiCommunity(currentViewingImage.id);
-    }
-  });
-    viewerBookmarkBtn?.addEventListener('click', () => {
-    if (currentViewingCommunityPost) {
-       if (!bookmarkedPostIds.has(currentViewingCommunityPost.id)) {
-        bookmarkPost(currentViewingCommunityPost.id);
-      }
-    }
-  });
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      switchTab(e.target.dataset.tab);
-    });
-  });
-});
-loadCommunityPosts();
-loadBookmarks();
-
-const fileInput = document.getElementById('fileInput');
-const dropZone = document.getElementById('dropZone');
-const galleryEl = document.getElementById('gallery');
-const clearBtn = document.getElementById('clearBtn');
-const downloadAllBtn = document.getElementById('downloadAllBtn');
-
-const viewer = document.getElementById('viewer');
-const viewerImg = document.getElementById('viewerImg');
-const viewerVideo = document.getElementById('viewerVideo');
-const viewerClose = document.getElementById('viewerClose');
-const viewerMeta = document.getElementById('viewerMeta');
-const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-
-const STORAGE_KEY = 'artGallery.images.v1';
-
-let images = [];
-let currentViewingImage = null;
-
-function save() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(images));
-  } catch (e) {
-    console.warn('Could not save media', e);
-  }
-}
-
-function load() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return;
-    try {
-    images = JSON.parse(raw).map(img => ({
-      ...img,
-       likes: img.likes || 0,
-      type: img.type || (img.data && img.data.startsWith('data:video') ? 'video' : 'image')
-        }));
-  } catch (e) {
-    images = [];
-  }
-}
-
-function render() {
-  galleryEl.innerHTML = '';
-  if (images.length === 0) {
-    galleryEl.innerHTML = '<p style="color:var(--muted);text-align:center">No media yet — import some art!</p>';
-    return;
-  }
-
-    images.slice().reverse().forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-
-        const mediaEl = item.type === 'video' ? document.createElement('video') : document.createElement('img');
-    mediaEl.className = 'thumb';
-    mediaEl.src = item.data;
-
-      if (item.type === 'video') {
-      mediaEl.muted = true;
-       mediaEl.loop = true;
-      mediaEl.preload = 'metadata';
-         } else {
-      mediaEl.alt = item.name || 'Artwork';
-    }
-
-     mediaEl.addEventListener('click', () => openViewer(item));
-
-    const meta = document.createElement('div');
-    meta.className = 'meta';'
-
-    const name = document.createElement('div');
-    name.textContent = item.name || 'Untitled';
-
-    const actions = document.createElement('div');
-    actions.className = 'actions';
-
-  const likeCount = document.createElement('span');
-    likeCount.className = 'likes';
-     likeCount.textContent = `${item.likes || 0} ❤️`;
-
-    const likeBtn = document.createElement('button');
-     likeBtn.className = 'like';
-       likeBtn.textContent = likedImages.has(item.id) ? 'Liked' : 'Like';
-    likeBtn.disabled = likedImages.has(item.id);
-      likeBtn.addEventListener('click', () => likeImage(item.id));
-
-      const removeBtn = document.createElement('button');
-    removeBtn.className = 'remove';
- removeBtn.textContent = 'Remove';
-    removeBtn.addEventListener('click', () => removeImage(item.id));
-
-        actions.appendChild(likeCount);
-    actions.appendChild(likeBtn);
-    actions.appendChild(removeBtn);
-
-    meta.appendChild(name);
-    meta.appendChild(actions);
-
-  card.appendChild(mediaEl);
-    card.appendChild(meta);
-    galleryEl.appendChild(card);
-  });
-
- updateViewerLikeButton();
-}
-
-function addFiles(fileList) {
-  const files = Array.from(fileList).filter(f => f.type && (f.type.startsWith('image') || f.type.startsWith('video')));
-  if (files.length === 0) return;
-
-    const readers = files.map(f => new Promise(resolve => {
-    const reader = new FileReader();
-    reader.onload = e => resolve({
-   name: f.name,
-  data: e.target.result,
-   id: Date.now().toString(36) + Math.random().toString(36).slice(2),
-      created: Date.now(),
-      likes: 0,  
- type: f.type.startsWith('video') ? 'video' : 'image'
-    });
-    reader.readAsDataURL(f);
-  }));
-
-  Promise.all(readers).then(results => {
-    images = images.concat(results);
-    save();
-      render();
-  }).catch(err => console.error(err));
-}
-
-function displayViewerItem(item, source = 'gallery') {
-    currentViewingImage = source === 'gallery' ? item : null;
-    currentViewingCommunityPost = source === 'community' ? item : null;
-
-  viewerImg.classList.add('hidden');
-  viewerVideo.classList.add('hidden');
-  viewerVideo.pause();
-    viewerVideo.removeAttribute('src');
-  viewerVideo.load();
-
-  
-const viewerVideo: HTMLElement | null
- viewerVideo.classList.remove('hidden');
-    viewerVideo.play().catch(() => {});
-  } else {
-      viewerImg.src = item.data;
-    viewerImg.alt = item.name || 'Artwork';
-    viewerImg.classList.remove('hidden');
-  }
-
-    viewerMeta.textContent = `${item.name || 'Untitled'} · ${item.likes || 0} like${item.likes === 1 ? '' : 's'} · ${item.type === 'video' ? 'Video' : 'Photo'}`;
-  viewer.classList.remove('hidden');
-  updateViewerLikeButton();
-  updateViewerShareButton();
-
-
-function openViewer(img) {
-  displayViewerItem(img, 'gallery');
-}
-
-function closeViewer() {
-  viewer.classList.add('hidden');
-  viewerImg.src = '';
-    viewerVideo.pause();
-  viewerVideo.removeAttribute('src');
-    viewerVideo.load();
-  currentViewingImage = null;
-   currentViewingCommunityPost = null;
-}
-
-fileInput.addEventListener('change', e => addFiles(e.target.files));
-
-['dragenter', 'dragover'].forEach(ev => dropZone.addEventListener(ev, e => { e.preventDefault(); dropZone.classList.add('drag'); }));
-['dragleave', 'drop'].forEach(ev => dropZone.addEventListener(ev, e => { e.preventDefault(); dropZone.classList.remove('drag'); }));
-
-dropZone.addEventListener('drop', e => {
-  if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files);
-});
-
-clearBtn.addEventListener('click', () => {
-  if (!confirm('Clear all saved media?')) return;
-  images = [];
-likedImages.clear();
-  save();
-  saveLikes();
-  render();
-});
-
-downloadPdfBtn.addEventListener('click', () => {
-  const activeItem = currentViewingImage || currentViewingCommunityPost;
-   if (activeItem?.type === 'image') {
-    downloadImageAsPdf(activeItem);
-     } else {
-    alert('PDF export is available for photos only.');
-  }
-});
-
-downloadAllBtn.addEventListener('click', () => downloadAllAsPdf(images.filter(item => item.type === 'image')));
-
-viewerClose.addEventListener('click', closeViewer);
-viewer.addEventListener('click', e => { if (e.target === viewer) closeViewer(); });
-
-load();
-loadLikes();
-render();
 
 
 
